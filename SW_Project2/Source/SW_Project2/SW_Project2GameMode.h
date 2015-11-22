@@ -3,6 +3,7 @@
 #include "GameFramework/GameMode.h"
 #include "SW_Project2GameMode.generated.h"
 
+
 UCLASS(minimalapi)
 class ASW_Project2GameMode : public AGameMode
 {
@@ -10,6 +11,18 @@ class ASW_Project2GameMode : public AGameMode
 
 public:
 	ASW_Project2GameMode();
+	
+	virtual void BeginPlay() override;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Time")
+	float time;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<class UUserWidget> HUDWidgetClass;
+
+	UPROPERTY()
+	class UUserWidget* CurrentWidget;
+
 };
 
 

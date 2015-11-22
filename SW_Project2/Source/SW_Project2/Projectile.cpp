@@ -16,7 +16,7 @@ AProjectile::AProjectile()
 	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
 	CollisionComp = CreateDefaultSubobject<USphereComponent>(TEXT("CollisionSphere"));
 	CollisionComp->InitSphereRadius(50.0f);
-	CollisionComp->BodyInstance.SetCollisionProfileName("Projectile");
+
 	CollisionComp->OnComponentHit.AddDynamic(this, &AProjectile::OnHit);
 
 	RootComponent = CollisionComp;
@@ -27,24 +27,23 @@ AProjectile::AProjectile()
 	ProjectileMovement->InitialSpeed = 3000.f;
 	ProjectileMovement->MaxSpeed = 3000.f;
 	ProjectileMovement->bRotationFollowsVelocity = true;
-
+	ProjectileMovement->ProjectileGravityScale = 0;
 
 }
 
 void AProjectile::OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Hit detected"));
-	// Only add impulse and destroy projectile if we hit a physics
-	if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL) && OtherComp->IsSimulatingPhysics())
-	{
-		ABlock* block = Cast<ABlock>(OtherActor);
 
-		if (OtherActor == block)
-		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Block hit detected"));
-		}
-		//DoSomething
+	ABlock* block = Cast<ABlock>(OtherActor);
+
+	if (OtherActor == block)
+	{
+		OtherActor->Destroy();
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Block hit detected"));
 	}
+	//DoSomething
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Hit detected"));
+	this->Destroy();
 }
 
 // Called when the game starts or when spawned

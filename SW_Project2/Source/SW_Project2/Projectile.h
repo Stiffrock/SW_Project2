@@ -29,10 +29,10 @@ public:
 	UPROPERTY(EditAnywhere, Category = Movement)
 	class UProjectileMovementComponent* ProjectileMovement;
 
-	UPROPERTY(EditAnywhere, Category = Projectile)
+
+	UPROPERTY(VisibleDefaultsOnly, Category = Projectile)
 	class USphereComponent* CollisionComp;
 
-	
 
 
 	/** Returns CollisionComp subobject **/

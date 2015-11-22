@@ -165,7 +165,7 @@ void ASW_Project2Pawn::ShootProjectile()
 {
 	
 	const FRotator SpawnRotation = SpringArm->GetComponentRotation();
-	const FVector SpawnLocation = GetActorLocation() + FVector(100.f, 0.f, 0.F);
+	const FVector SpawnLocation = GetActorLocation() + FVector(200.f, 0.f, 0.F);
 
 	UWorld* const World = GetWorld();
 	if (World != NULL)
