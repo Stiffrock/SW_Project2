@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\SW_Project2.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{C2F12182-D51C-4DE5-93F7-910C93397B7A}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SW_Project2.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\SW_Project2Editor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{AC5C2FBF-62B4-48C9-B100-40C61EF4FE29}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\SW_Project2">
+      <UniqueIdentifier>{44456F6F-4480-48B8-A6E8-4567736C573E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SW_Project2\SW_Project2.Build.cs">
+      <Filter>Source\SW_Project2</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\SW_Project2\SW_Project2.cpp">
+      <Filter>Source\SW_Project2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SW_Project2\SW_Project2.h">
+      <Filter>Source\SW_Project2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SW_Project2\SW_Project2GameMode.cpp">
+      <Filter>Source\SW_Project2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SW_Project2\SW_Project2GameMode.h">
+      <Filter>Source\SW_Project2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SW_Project2\SW_Project2Pawn.cpp">
+      <Filter>Source\SW_Project2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SW_Project2\SW_Project2Pawn.h">
+      <Filter>Source\SW_Project2</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\SW_Project2\Projectile.h">
+      <Filter>Source\SW_Project2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SW_Project2\Block.h">
+      <Filter>Source\SW_Project2</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\SW_Project2\Projectile.cpp">
+      <Filter>Source\SW_Project2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SW_Project2\Block.cpp">
+      <Filter>Source\SW_Project2</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
