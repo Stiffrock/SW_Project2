@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SW_PROJECT2_SW_Project2GameMode_generated_h
 
-#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_RPC_WRAPPERS
-#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_RPC_WRAPPERS_NO_PURE_DECLS
-#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_INCLASS_NO_PURE_DECLS \
+#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_RPC_WRAPPERS
+#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_RPC_WRAPPERS_NO_PURE_DECLS
+#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesASW_Project2GameMode(); \
 	friend SW_PROJECT2_API class UClass* Z_Construct_UClass_ASW_Project2GameMode(); \
@@ -26,7 +26,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	virtual UObject* _getUObject() const override { return const_cast<ASW_Project2GameMode*>(this); }
 
 
-#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_INCLASS \
+#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_INCLASS \
 	private: \
 	static void StaticRegisterNativesASW_Project2GameMode(); \
 	friend SW_PROJECT2_API class UClass* Z_Construct_UClass_ASW_Project2GameMode(); \
@@ -37,7 +37,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	virtual UObject* _getUObject() const override { return const_cast<ASW_Project2GameMode*>(this); }
 
 
-#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_STANDARD_CONSTRUCTORS \
+#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	SW_PROJECT2_API ASW_Project2GameMode(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ASW_Project2GameMode) \
@@ -49,7 +49,7 @@ private: \
 public:
 
 
-#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_ENHANCED_CONSTRUCTORS \
+#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	SW_PROJECT2_API ASW_Project2GameMode(const ASW_Project2GameMode& InCopy); \
@@ -59,23 +59,23 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASW_Project2GameMode); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ASW_Project2GameMode)
 
 
-#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_6_PROLOG
-#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_GENERATED_BODY_LEGACY \
+#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_7_PROLOG
+#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_RPC_WRAPPERS \
-	SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_INCLASS \
-	SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_STANDARD_CONSTRUCTORS \
+	SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_RPC_WRAPPERS \
+	SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_INCLASS \
+	SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_GENERATED_BODY \
+#define SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_RPC_WRAPPERS_NO_PURE_DECLS \
-	SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_INCLASS_NO_PURE_DECLS \
-	SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_9_ENHANCED_CONSTRUCTORS \
+	SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
+	SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_INCLASS_NO_PURE_DECLS \
+	SW_Project2_Source_SW_Project2_SW_Project2GameMode_h_10_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

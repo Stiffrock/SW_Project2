@@ -12,16 +12,24 @@ void EmptyLinkFunctionForGeneratedCodeSW_Project2() {}
 	void ABlock::StaticRegisterNativesABlock()
 	{
 	}
-	IMPLEMENT_CLASS(ABlock, 2547493943);
+	IMPLEMENT_CLASS(ABlock, 541016279);
+	void AMyHUD::StaticRegisterNativesAMyHUD()
+	{
+	}
+	IMPLEMENT_CLASS(AMyHUD, 2647777199);
+	void APickup::StaticRegisterNativesAPickup()
+	{
+	}
+	IMPLEMENT_CLASS(APickup, 2508255532);
 	void AProjectile::StaticRegisterNativesAProjectile()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AProjectile::StaticClass(),"OnHit",(Native)&AProjectile::execOnHit);
 	}
-	IMPLEMENT_CLASS(AProjectile, 4236203844);
+	IMPLEMENT_CLASS(AProjectile, 3658287151);
 	void ASW_Project2GameMode::StaticRegisterNativesASW_Project2GameMode()
 	{
 	}
-	IMPLEMENT_CLASS(ASW_Project2GameMode, 2919826340);
+	IMPLEMENT_CLASS(ASW_Project2GameMode, 966973165);
 	void ASW_Project2Pawn::StaticRegisterNativesASW_Project2Pawn()
 	{
 	}
@@ -31,6 +39,7 @@ void EmptyLinkFunctionForGeneratedCodeSW_Project2() {}
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 	ENGINE_API class UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_AHUD();
 	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API class UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
@@ -43,6 +52,10 @@ void EmptyLinkFunctionForGeneratedCodeSW_Project2() {}
 
 	SW_PROJECT2_API class UClass* Z_Construct_UClass_ABlock_NoRegister();
 	SW_PROJECT2_API class UClass* Z_Construct_UClass_ABlock();
+	SW_PROJECT2_API class UClass* Z_Construct_UClass_AMyHUD_NoRegister();
+	SW_PROJECT2_API class UClass* Z_Construct_UClass_AMyHUD();
+	SW_PROJECT2_API class UClass* Z_Construct_UClass_APickup_NoRegister();
+	SW_PROJECT2_API class UClass* Z_Construct_UClass_APickup();
 	SW_PROJECT2_API class UFunction* Z_Construct_UFunction_AProjectile_OnHit();
 	SW_PROJECT2_API class UClass* Z_Construct_UClass_AProjectile_NoRegister();
 	SW_PROJECT2_API class UClass* Z_Construct_UClass_AProjectile();
@@ -72,6 +85,8 @@ void EmptyLinkFunctionForGeneratedCodeSW_Project2() {}
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_CollisionComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CollisionComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CollisionComp, ABlock), 0x00000000000b0009, Z_Construct_UClass_USphereComponent_NoRegister());
 				UProperty* NewProp_StaticMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("StaticMesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(StaticMesh, ABlock), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+				CPP_BOOL_PROPERTY_BITMASK_STRUCT(Pickup, ABlock, bool);
+				UProperty* NewProp_Pickup = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Pickup"), RF_Public|RF_Transient|RF_Native) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(Pickup, ABlock), 0x0000000000000005, CPP_BOOL_PROPERTY_BITMASK(Pickup, ABlock), sizeof(bool), true);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -84,6 +99,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_StaticMesh, TEXT("Category"), TEXT("Block"));
 				MetaData->SetValue(NewProp_StaticMesh, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_StaticMesh, TEXT("ModuleRelativePath"), TEXT("Block.h"));
+				MetaData->SetValue(NewProp_Pickup, TEXT("Category"), TEXT("Pickup"));
+				MetaData->SetValue(NewProp_Pickup, TEXT("ModuleRelativePath"), TEXT("Block.h"));
 #endif
 			}
 		}
@@ -92,6 +109,81 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ABlock(Z_Construct_UClass_ABlock, TEXT("ABlock"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABlock);
+	UClass* Z_Construct_UClass_AMyHUD_NoRegister()
+	{
+		return AMyHUD::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AMyHUD()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AHUD();
+			Z_Construct_UPackage_SW_Project2();
+			OuterClass = AMyHUD::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x2090028C;
+
+
+				OuterClass->ClassConfigName = FName(TEXT("Game"));
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Rendering Actor Input Replication"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("MyHUD.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("MyHUD.h"));
+				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AMyHUD(Z_Construct_UClass_AMyHUD, TEXT("AMyHUD"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AMyHUD);
+	UClass* Z_Construct_UClass_APickup_NoRegister()
+	{
+		return APickup::StaticClass();
+	}
+	UClass* Z_Construct_UClass_APickup()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_SW_Project2();
+			OuterClass = APickup::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_CollisionComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CollisionComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CollisionComp, APickup), 0x00000000000b0009, Z_Construct_UClass_USphereComponent_NoRegister());
+				UProperty* NewProp_StaticMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("StaticMesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(StaticMesh, APickup), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Pickup.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Pickup.h"));
+				MetaData->SetValue(NewProp_CollisionComp, TEXT("Category"), TEXT("Pickup"));
+				MetaData->SetValue(NewProp_CollisionComp, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_CollisionComp, TEXT("ModuleRelativePath"), TEXT("Pickup.h"));
+				MetaData->SetValue(NewProp_StaticMesh, TEXT("Category"), TEXT("Pickup"));
+				MetaData->SetValue(NewProp_StaticMesh, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_StaticMesh, TEXT("ModuleRelativePath"), TEXT("Pickup.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_APickup(Z_Construct_UClass_APickup, TEXT("APickup"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(APickup);
 	UFunction* Z_Construct_UFunction_AProjectile_OnHit()
 	{
 		struct Projectile_eventOnHit_Parms
@@ -141,7 +233,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->LinkChild(Z_Construct_UFunction_AProjectile_OnHit());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-				UProperty* NewProp_CollisionComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CollisionComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CollisionComp, AProjectile), 0x0000000000080009, Z_Construct_UClass_USphereComponent_NoRegister());
+				UProperty* NewProp_CollisionComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CollisionComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CollisionComp, AProjectile), 0x00000000000b0009, Z_Construct_UClass_USphereComponent_NoRegister());
 				UProperty* NewProp_ProjectileMovement = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ProjectileMovement"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ProjectileMovement, AProjectile), 0x0000000000080009, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
 				UProperty* NewProp_StaticMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("StaticMesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(StaticMesh, AProjectile), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
@@ -186,6 +278,9 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassFlags |= 0x2088028C;
 
 
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_time = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("time"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(time, ASW_Project2GameMode), 0x0000000000000005);
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -194,6 +289,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("SW_Project2GameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("SW_Project2GameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+				MetaData->SetValue(NewProp_time, TEXT("Category"), TEXT("Time"));
+				MetaData->SetValue(NewProp_time, TEXT("ModuleRelativePath"), TEXT("SW_Project2GameMode.h"));
 #endif
 			}
 		}
@@ -281,8 +378,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SW_Project2")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xCA55C41A;
-			Guid.B = 0xDB50BE9B;
+			Guid.A = 0xBDBA8572;
+			Guid.B = 0x5D8244EA;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

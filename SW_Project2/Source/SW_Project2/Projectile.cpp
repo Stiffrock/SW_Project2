@@ -38,12 +38,17 @@ void AProjectile::OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVec
 
 	if (OtherActor == block)
 	{
-		OtherActor->Destroy();
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Block hit detected"));
+		if (block->Pickup)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Pickup block hit detected"));
+		}
+		else
+		{
+			OtherActor->Destroy();
+		}		
 	}
-	//DoSomething
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Hit detected"));
 	this->Destroy();
+
 }
 
 // Called when the game starts or when spawned

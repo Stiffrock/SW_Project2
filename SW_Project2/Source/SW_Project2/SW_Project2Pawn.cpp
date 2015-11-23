@@ -5,6 +5,7 @@
 #include "Engine.h"
 #include "Projectile.h"
 #include "Block.h"
+#include "SW_Project2GameMode.h"
 
 ASW_Project2Pawn::ASW_Project2Pawn()
 {
@@ -97,11 +98,20 @@ void ASW_Project2Pawn::NotifyHit(class UPrimitiveComponent* MyComp, class AActor
 
 	if (Other == block)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("CrashHit"));
-		Other->Destroy();
+		if (block->Pickup)
+		{
+			AGameMode* gModePtr = GetWorld()->GetAuthGameMode();
+			ASW_Project2GameMode* GameModePtr = Cast<ASW_Project2GameMode>(gModePtr);
+			GameModePtr->time += 10.0f;
+
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("TakeDamage"));
+		}
+		else
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("TakeDamage"));		
 		//TakeDamage
 	}
 
+	Other->Destroy();
 	// Set velocity to zero upon collision
 	CurrentForwardSpeed = 0.f;
 }

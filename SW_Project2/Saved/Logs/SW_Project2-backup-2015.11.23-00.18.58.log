@@ -1,0 +1,549 @@
+﻿[2015.11.22-22.53.06:833][  0]Log file open, 11/22/15 23:53:06
+[2015.11.22-22.53.06:833][  0]LogInit:Display: Running engine for game: SW_Project2
+[2015.11.22-22.53.06:833][  0]LogInit:Display: RandInit(-1711504697) SRandInit(-1711504697).
+[2015.11.22-22.53.06:833][  0]LogTaskGraph: Started task graph with 4 named threads and 5 total threads.
+[2015.11.22-22.53.06:833][  0]LogStats: Stats thread started at 0.066787
+[2015.11.22-22.53.06:833][  0]LogInit: Version: 4.9.2-2707645+++depot+UE4-Releases+4.9
+[2015.11.22-22.53.06:833][  0]LogInit: API Version: 2672455
+[2015.11.22-22.53.06:833][  0]LogInit: Compiled (64-bit): Sep 28 2015 10:25:44
+[2015.11.22-22.53.06:833][  0]LogInit: Compiled with Visual C++: 18.00.21005.01
+[2015.11.22-22.53.06:833][  0]LogInit: Build Configuration: Development
+[2015.11.22-22.53.06:833][  0]LogInit: Branch Name: ++depot+UE4-Releases+4.9
+[2015.11.22-22.53.06:833][  0]LogInit: Command line:  
+[2015.11.22-22.53.06:833][  0]LogInit: Base directory: C:/Program Files/Epic Games/4.9/Engine/Binaries/Win64/
+[2015.11.22-22.53.06:833][  0]LogInit: Rocket: 1
+[2015.11.22-22.53.06:843][  0]LogInit: Using libcurl 7.41.0
+[2015.11.22-22.53.06:843][  0]LogInit:  - built for x86_64-pc-win32
+[2015.11.22-22.53.06:843][  0]LogInit:  - supports SSL with WinSSL
+[2015.11.22-22.53.06:843][  0]LogInit:  - other features:
+[2015.11.22-22.53.06:843][  0]LogInit:      CURL_VERSION_SSL
+[2015.11.22-22.53.06:843][  0]LogInit:      CURL_VERSION_IPV6
+[2015.11.22-22.53.06:843][  0]LogInit:      CURL_VERSION_ASYNCHDNS
+[2015.11.22-22.53.06:843][  0]LogInit:      CURL_VERSION_LARGEFILE
+[2015.11.22-22.53.06:843][  0]LogInit:      CURL_VERSION_IDN
+[2015.11.22-22.53.06:843][  0]LogInit:  CurlRequestOptions (configurable via config and command line):
+[2015.11.22-22.53.06:843][  0]LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+[2015.11.22-22.53.06:843][  0]LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+[2015.11.22-22.53.06:843][  0]LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+[2015.11.22-22.53.06:843][  0]LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+[2015.11.22-22.53.06:854][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[2015.11.22-22.53.06:862][  0]LogInit: Object subsystem initialized
+[2015.11.22-22.53.06:864][  0]LogInit: Selected Device Profile: [Windows]
+[2015.11.22-22.53.06:864][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2015.11.22-22.53.06:873][  0]LogInit: Computer: STOFFEPC
+[2015.11.22-22.53.06:873][  0]LogInit: User: Stoffe
+[2015.11.22-22.53.06:873][  0]LogInit: CPU Page size=4096, Cores=2
+[2015.11.22-22.53.06:873][  0]LogInit: High frequency timer resolution =3.222677 MHz
+[2015.11.22-22.53.06:873][  0]LogMemory: Memory total: Physical=7.9GB (8GB approx)
+[2015.11.22-22.53.06:873][  0]LogMemory: Platform Memory Stats for Windows
+[2015.11.22-22.53.06:873][  0]LogMemory: Process Physical Memory: 51.91 MB used, 51.91 MB peak
+[2015.11.22-22.53.06:873][  0]LogMemory: Process Virtual Memory: 56.85 MB used, 56.85 MB peak
+[2015.11.22-22.53.06:873][  0]LogMemory: Physical Memory: 2327.39 MB used, 8126.94 MB total
+[2015.11.22-22.53.06:873][  0]LogMemory: Virtual Memory: 349.46 MB used, 134217728.00 MB total
+[2015.11.22-22.53.06:902][  0]LogTextLocalizationManager: No translations for ('sv-SE') exist, falling back to 'en' for localization and internationalization data.
+[2015.11.22-22.53.07:734][  0]LogD3D11RHI: Found D3D11 adapter 0: AMD Radeon HD 7800 Series (Feature Level 11_0)
+[2015.11.22-22.53.07:734][  0]LogD3D11RHI: Adapter has 2030MB of dedicated video memory, 0MB of dedicated system memory, and 3840MB of shared system memory, 2 output[s]
+[2015.11.22-22.53.07:735][  0]LogD3D11RHI: Found D3D11 adapter 1: Microsoft Basic Render Driver (Feature Level 11_0)
+[2015.11.22-22.53.07:735][  0]LogD3D11RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 256MB of shared system memory, 0 output[s]
+[2015.11.22-22.53.07:735][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
+[2015.11.22-22.53.07:738][  0]LogD3D11RHI: !Direct3DDevice
+[2015.11.22-22.53.07:738][  0]LogRHI: Texture pool is 1361 MB (70% of 1945 MB)
+[2015.11.22-22.53.07:743][  0]LogD3D11RHI: Async texture creation disabled: no driver support
+[2015.11.22-22.53.07:753][  0]LogShaderCompilers: Guid format shader working directory is 15 characters bigger than the processId version (../../../../../../Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Intermediate/Shaders/WorkingDirectory/3332/).
+[2015.11.22-22.53.07:754][  0]LogShaderCompilers: Cleaned the shader compiler working directory '../../../../../../Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Intermediate/Shaders/tmp/4A9597C34593F681662FE494F6F46850/'.
+[2015.11.22-22.53.07:754][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
+[2015.11.22-22.53.09:068][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
+[2015.11.22-22.53.09:074][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
+[2015.11.22-22.53.09:080][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
+[2015.11.22-22.53.09:085][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
+[2015.11.22-22.53.09:090][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
+[2015.11.22-22.53.09:095][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
+[2015.11.22-22.53.09:098][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
+[2015.11.22-22.53.09:102][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
+[2015.11.22-22.53.09:105][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
+[2015.11.22-22.53.09:109][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
+[2015.11.22-22.53.09:113][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
+[2015.11.22-22.53.09:116][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
+[2015.11.22-22.53.09:117][  0]LogTemp:Display: Loaded TP HTML5TargetPlatform
+[2015.11.22-22.53.09:134][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
+[2015.11.22-22.53.09:137][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
+[2015.11.22-22.53.09:140][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
+[2015.11.22-22.53.09:146][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
+[2015.11.22-22.53.09:146][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2015.11.22-22.53.09:240][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2015.11.22-22.53.09:283][  0]LogDerivedDataCache: Loaded boot cache 0.04s 42MB C:/Users/Stoffe/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc.
+[2015.11.22-22.53.09:283][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/Stoffe/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc
+[2015.11.22-22.53.09:283][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2015.11.22-22.53.09:283][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2015.11.22-22.53.09:283][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2015.11.22-22.53.09:283][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2015.11.22-22.53.09:442][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2015.11.22-22.53.09:453][  0]LogDerivedDataCache: Using Local data cache path C:/Users/Stoffe/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2015.11.22-22.53.09:660][  0]LogInit: Selected Device Profile: [Windows]
+[2015.11.22-22.53.09:663][  0]LogContentStreaming: Texture pool size is 0.000000MB
+[2015.11.22-22.53.09:798][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2015.11.22-22.53.09:798][  0]LogMeshUtilities: No automatic mesh merging module available
+[2015.11.22-22.53.10:074][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2015.11.22-22.53.10:786][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2015.11.22-22.53.10:921][  0]LogAssetRegistry: FAssetRegistry took 0.0109 seconds to start up
+[2015.11.22-22.53.11:121][  0]SourceControl: Info Source control is disabled
+[2015.11.22-22.53.11:131][  0]SourceControl: Info Source control is disabled
+[2015.11.22-22.53.11:144][  0]SourceControl: Info Source control is disabled
+[2015.11.22-22.53.11:161][  0]SourceControl: Info Source control is disabled
+[2015.11.22-22.53.11:335][  0]LogLinker:Warning: Asset '../../../Engine/Plugins/Runtime/LeapMotionController/Content/LM_PassthroughMaterial.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.11.22-22.53.11:429][  0]LogObj: 28509 objects as part of root set at end of initial load.
+[2015.11.22-22.53.11:429][  0]LogUObjectAllocator: 6105608 out of 0 bytes used by permanent object pool.
+[2015.11.22-22.53.11:487][  0]LogEngine: Initializing Engine...
+[2015.11.22-22.53.11:490][  0]LogHMD: Can't find Oculus library dev build: is proper Runtime installed? Version: 0.7.0.0
+[2015.11.22-22.53.11:490][  0]LogHMD: SteamVR failed to initialize.  Err: 110
+[2015.11.22-22.53.11:629][  0]LogAIModule: Creating AISystem for world NewWorld
+[2015.11.22-22.53.11:633][  0]LogInit: XAudio2 using 'Högtalare (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2015.11.22-22.53.11:641][  0]LogInit: FAudioDevice initialized.
+[2015.11.22-22.53.11:661][  0]LogDerivedDataCache: Saved boot cache 0.02s 42MB C:/Users/Stoffe/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc.
+[2015.11.22-22.53.11:663][  0]LogInit: Texture streaming: Enabled
+[2015.11.22-22.53.11:668][  0]LogAnalytics: Creating configured Analytics provider AnalyticsET
+[2015.11.22-22.53.11:668][  0]LogAnalytics: [UEEditor.Rocket.Release] APIServer = http://et2.epicgames.com/ET2/. AppVersion = 4.9.2-2707645+++depot+UE4-Releases+4.9
+[2015.11.22-22.53.11:669][  0]LogAnalytics: [UEEditor.Rocket.Release] SetUserId c2f82278409fbc7e17ba4c8b187827c0|8471e16762be488588a110ad13c08bd6|a2f24018-7849-4a41-8ec9-fa4680d0f5a7
+[2015.11.22-22.53.11:669][  0]LogAnalytics: [UEEditor.Rocket.Release] AnalyticsET::StartSession
+[2015.11.22-22.53.11:689][  0]LogInit: Transaction tracking system initialized
+[2015.11.22-22.53.11:720][  0]BlueprintLog: New page: Editor Load
+[2015.11.22-22.53.11:825][  0]LocalizationService: Info Localization service is disabled
+[2015.11.22-22.53.11:925][  0]LogConsoleResponse:Display: 
+[2015.11.22-22.53.12:084][  0]LogCook:Display: Done creating registry. It took  0.00s.
+[2015.11.22-22.53.12:155][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Content/' took 0.01s
+[2015.11.22-22.53.12:155][  0]SourceControl: Info Source control is disabled
+[2015.11.22-22.53.12:155][  0]Cmd: MAP LOAD FILE="../../../../../../Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Content/FlyingCPP/Maps/FlyingExampleMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2015.11.22-22.53.12:155][  0]LightingResults: New page: Lighting Build
+[2015.11.22-22.53.12:159][  0]MapCheck: New page: Map Check
+[2015.11.22-22.53.12:159][  0]LightingResults: New page: Lighting Build
+[2015.11.22-22.53.12:182][  0]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000788CEBA160
+[2015.11.22-22.53.12:801][  0]LogAIModule: Creating AISystem for world FlyingExampleMap
+[2015.11.22-22.53.12:821][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2015.11.22-22.53.12:821][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2015.11.22-22.53.12:892][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 70.573ms to complete.
+[2015.11.22-22.53.12:892][  0]LogFileHelpers: Loading map 'FlyingExampleMap' took 0.738
+[2015.11.22-22.53.13:054][  0]LogCollectionManager: Loaded 0 collections in 0.002076 seconds
+[2015.11.22-22.53.13:102][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Saved/Collections/' took 0.01s
+[2015.11.22-22.53.13:102][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Content/Developers/Stoffe/Collections/' took 0.01s
+[2015.11.22-22.53.13:102][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Content/Collections/' took 0.01s
+[2015.11.22-22.53.13:102][  0]LogContentBrowser: Native class hierarchy populated in 0.0139 seconds. Added 1871 classes and 335 folders.
+[2015.11.22-22.53.13:114][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000003 seconds
+[2015.11.22-22.53.13:126][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0017 seconds. Added 0 classes and 0 folders.
+[2015.11.22-22.53.13:186][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0011 seconds. Added 0 classes and 0 folders.
+[2015.11.22-22.53.13:200][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0011 seconds. Added 1 classes and 2 folders.
+[2015.11.22-22.53.13:283][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2015.11.22-22.53.13:288][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
+[2015.11.22-22.53.13:310][  0]LogLoad: Full Startup: 7.50 seconds (BP compile: 0.09 seconds)
+[2015.11.22-22.53.13:702][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2015.11.22-22.53.13:834][  0]LogRenderer: Reallocating scene render targets to support 1028x636 (Frame:2).
+[2015.11.22-22.53.15:297][  4]LogAssetRegistry: Asset discovery search completed in 4.3870 seconds
+[2015.11.22-22.53.15:298][  4]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000001 seconds (found 0 objects)
+[2015.11.22-22.53.15:298][  4]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000039 seconds (updated 0 objects)
+[2015.11.22-22.53.18:261][233]LogVSAccessor:Warning: Couldn't access Visual Studio
+[2015.11.22-22.53.18:268][233]Recompiling SW_Project2...
+[2015.11.22-22.53.18:269][233]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SW_Project2 -ModuleWithSuffix SW_Project2 9778 Win64 Development -editorrecompile -canskiplink "C:/Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/SW_Project2.uproject" -rocket  -rocket]
+[2015.11.22-22.53.18:269][233]Warning: Starting HotReload took  0.0s.
+[2015.11.22-22.53.20:416][428]CompilerResultsLog: New page: Compilation - Nov 23, 2015, 12:53:20 AM
+[2015.11.22-22.53.20:416][428]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.22-22.53.20:417][428]CompilerResultsLog: Info Target is up to date.
+[2015.11.22-22.53.20:417][428]LogMainFrame: MainFrame: Module compiling took 2.155 seconds
+[2015.11.22-22.53.21:733][554]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.53.21:733][554]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.22-22.53.21:733][554]PIE: New page: PIE session: FlyingExampleMap (Nov 23, 2015, 12:53:21 AM)
+[2015.11.22-22.53.21:733][554]LogPlayLevel: Creating play world package: /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap
+[2015.11.22-22.53.21:803][554]LogPlayLevel: PIE: StaticDuplicateObject took: (0.069234s)
+[2015.11.22-22.53.21:803][554]LogAIModule: Creating AISystem for world FlyingExampleMap
+[2015.11.22-22.53.21:804][554]LogPlayLevel: PIE: World Init took: (0.000818s)
+[2015.11.22-22.53.21:804][554]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap to /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap (0.070576s)
+[2015.11.22-22.53.21:804][554]LogActorComponent: UnregisterComponent: (/Engine/Transient.ProjectileComp) Not registered. Aborting.
+[2015.11.22-22.53.21:843][554]LogInit: XAudio2 using 'Högtalare (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2015.11.22-22.53.21:852][554]LogInit: FAudioDevice initialized.
+[2015.11.22-22.53.21:909][554]LogWorld: Game class is 'SW_Project2GameMode'
+[2015.11.22-22.53.21:934][554]LogWorld: Bringing World /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap up for play (max tick rate 0) at 2015.11.22-23.53.21
+[2015.11.22-22.53.21:934][554]LogActor:Warning: GameSession /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameSession_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.53.21:935][554]LogActor:Warning: GameNetworkManager /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameNetworkManager_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.53.21:935][554]LogWorld: Bringing up level for play took: 0.024573
+[2015.11.22-22.53.21:936][554]PIE: Info Play in editor start time for /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap -0.206
+[2015.11.22-22.53.21:937][554]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.53.27:215][135]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.53.27:252][135]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.53.27:275][135]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000078F1E30540
+[2015.11.22-22.53.29:332][325]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.53.29:332][325]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.22-22.53.29:332][325]PIE: New page: PIE session: FlyingExampleMap (Nov 23, 2015, 12:53:29 AM)
+[2015.11.22-22.53.29:332][325]LogPlayLevel: Creating play world package: /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap
+[2015.11.22-22.53.29:403][325]LogPlayLevel: PIE: StaticDuplicateObject took: (0.070528s)
+[2015.11.22-22.53.29:403][325]LogAIModule: Creating AISystem for world FlyingExampleMap
+[2015.11.22-22.53.29:404][325]LogPlayLevel: PIE: World Init took: (0.000946s)
+[2015.11.22-22.53.29:404][325]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap to /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap (0.071894s)
+[2015.11.22-22.53.29:438][325]LogInit: XAudio2 using 'Högtalare (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2015.11.22-22.53.29:447][325]LogInit: FAudioDevice initialized.
+[2015.11.22-22.53.29:488][325]LogWorld: Game class is 'SW_Project2GameMode'
+[2015.11.22-22.53.29:517][325]LogWorld: Bringing World /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap up for play (max tick rate 0) at 2015.11.22-23.53.29
+[2015.11.22-22.53.29:517][325]LogActor:Warning: GameSession /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameSession_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.53.29:517][325]LogActor:Warning: GameNetworkManager /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameNetworkManager_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.53.29:518][325]LogWorld: Bringing up level for play took: 0.030071
+[2015.11.22-22.53.29:520][325]PIE: Info Play in editor start time for /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap -0.622
+[2015.11.22-22.53.29:520][325]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.53.36:957][998]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.53.36:992][998]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.53.37:039][999]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000078FEB60C20
+[2015.11.22-22.53.53:258][847]LogVSAccessor:Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2015.11.22-22.53.56:427][848]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Source/SW_Project2/Projectile.h'
+[2015.11.22-22.53.56:575][848]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Source/SW_Project2/Projectile.cpp'
+[2015.11.22-22.54.42:372][ 42]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.54.42:372][ 42]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.22-22.54.42:372][ 42]PIE: New page: PIE session: FlyingExampleMap (Nov 23, 2015, 12:54:42 AM)
+[2015.11.22-22.54.42:372][ 42]LogPlayLevel: Creating play world package: /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap
+[2015.11.22-22.54.42:448][ 42]LogPlayLevel: PIE: StaticDuplicateObject took: (0.076179s)
+[2015.11.22-22.54.42:449][ 42]LogAIModule: Creating AISystem for world FlyingExampleMap
+[2015.11.22-22.54.42:450][ 42]LogPlayLevel: PIE: World Init took: (0.001328s)
+[2015.11.22-22.54.42:450][ 42]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap to /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap (0.077965s)
+[2015.11.22-22.54.42:450][ 42]LogActorComponent: UnregisterComponent: (/Engine/Transient.ProjectileComp) Not registered. Aborting.
+[2015.11.22-22.54.42:487][ 42]LogInit: XAudio2 using 'Högtalare (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2015.11.22-22.54.42:498][ 42]LogInit: FAudioDevice initialized.
+[2015.11.22-22.54.42:550][ 42]LogWorld: Game class is 'SW_Project2GameMode'
+[2015.11.22-22.54.42:583][ 42]LogWorld: Bringing World /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap up for play (max tick rate 0) at 2015.11.22-23.54.42
+[2015.11.22-22.54.42:583][ 42]LogActor:Warning: GameSession /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameSession_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.54.42:584][ 42]LogActor:Warning: GameNetworkManager /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameNetworkManager_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.54.42:585][ 42]LogWorld: Bringing up level for play took: 0.033640
+[2015.11.22-22.54.42:587][ 42]PIE: Info Play in editor start time for /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap 0.445
+[2015.11.22-22.54.42:587][ 42]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.54.48:975][544]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.54.49:012][544]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.54.49:054][544]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000078FEB61B20
+[2015.11.22-22.55.14:929][824]Recompiling SW_Project2...
+[2015.11.22-22.55.14:930][824]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SW_Project2 -ModuleWithSuffix SW_Project2 2792 Win64 Development -editorrecompile -canskiplink "C:/Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/SW_Project2.uproject" -rocket  -rocket]
+[2015.11.22-22.55.14:931][824]Warning: Starting HotReload took  0.0s.
+[2015.11.22-22.55.25:494][485]LogEditorViewport: Clicking on Actor (LMB): Block_BP_C (Block_BP2)
+[2015.11.22-22.55.28:004][618]LogLinker:Warning: Asset '../../../Engine/Content/ArtTools/RenderToTexture/Macros/RenderToTextureMacros.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.11.22-22.55.29:018][618]LogContentBrowser: Native class hierarchy updated for 'BlueprintGraph' in 0.0024 seconds. Added 107 classes and 0 folders.
+[2015.11.22-22.55.34:890][813]LogRenderer: Reallocating scene render targets to support 1028x712 (Frame:5638).
+[2015.11.22-22.55.45:400][244]BlueprintLog: New page: Compile Block_BP
+[2015.11.22-22.55.45:466][244]LogBlueprint:Warning: ReplaceInstancesOfClass: RootComponent (/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.Block_BP2_2.CollisionComp) attached to another component in this Actor (/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.Block_BP2_2).
+[2015.11.22-22.55.45:502][244]LogBlueprint:Warning: ReplaceInstancesOfClass: RootComponent (/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.Block_BP_2.CollisionComp) attached to another component in this Actor (/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.Block_BP_2).
+[2015.11.22-22.55.45:610][244]LogActorComponent: UnregisterComponent: (/Engine/Transient.ProjectileComp) Not registered. Aborting.
+[2015.11.22-22.55.45:669][244]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000078926FC220
+[2015.11.22-22.55.45:682][244]BlueprintEditorCompileResults: Info [0159.87] Compile of Block_BP successful! [in 282 ms]
+[2015.11.22-22.55.45:851][248]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Block_BP" FILE="../../../../../../Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Content/Block_BP.uasset" SILENT=true
+[2015.11.22-22.55.45:889][248]LogSavePackage: Save=33.870598ms
+[2015.11.22-22.55.45:889][248]LogSavePackage: Moving '../../../../../../Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Saved/Block_BPBAB8F0F543EA5AB00BCF13A962AF0D68.tmp' to '../../../../../../Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Content/Block_BP.uasset'
+[2015.11.22-22.55.45:891][248]LogSavePackage: Total save time: 38.994599ms
+[2015.11.22-22.55.45:891][248]LogSavePackage:Warning: Finished SavePackage ../../../../../../Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Content/Block_BP.uasset
+[2015.11.22-22.55.48:640][392]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.55.48:640][392]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.22-22.55.48:641][392]PIE: New page: PIE session: FlyingExampleMap (Nov 23, 2015, 12:55:48 AM)
+[2015.11.22-22.55.48:641][392]LogPlayLevel: Creating play world package: /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap
+[2015.11.22-22.55.48:713][392]LogPlayLevel: PIE: StaticDuplicateObject took: (0.072364s)
+[2015.11.22-22.55.48:714][392]LogAIModule: Creating AISystem for world FlyingExampleMap
+[2015.11.22-22.55.48:714][392]LogPlayLevel: PIE: World Init took: (0.000940s)
+[2015.11.22-22.55.48:714][392]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap to /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap (0.073686s)
+[2015.11.22-22.55.48:777][392]LogInit: XAudio2 using 'Högtalare (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2015.11.22-22.55.48:787][392]LogInit: FAudioDevice initialized.
+[2015.11.22-22.55.48:829][392]LogWorld: Game class is 'SW_Project2GameMode'
+[2015.11.22-22.55.48:862][392]LogWorld: Bringing World /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap up for play (max tick rate 0) at 2015.11.22-23.55.48
+[2015.11.22-22.55.48:863][392]LogActor:Warning: GameSession /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameSession_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.55.48:863][392]LogActor:Warning: GameNetworkManager /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameNetworkManager_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.55.48:864][392]LogWorld: Bringing up level for play took: 0.032962
+[2015.11.22-22.55.48:866][392]PIE: Info Play in editor start time for /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap 0.723
+[2015.11.22-22.55.48:866][392]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.55.54:286][883]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.55.54:360][883]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.55.54:489][884]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000078825E8C20
+[2015.11.22-22.55.55:393][947]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.55.55:393][947]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.22-22.55.55:393][947]PIE: New page: PIE session: FlyingExampleMap (Nov 23, 2015, 12:55:55 AM)
+[2015.11.22-22.55.55:393][947]LogPlayLevel: Creating play world package: /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap
+[2015.11.22-22.55.55:469][947]LogPlayLevel: PIE: StaticDuplicateObject took: (0.076081s)
+[2015.11.22-22.55.55:471][947]LogAIModule: Creating AISystem for world FlyingExampleMap
+[2015.11.22-22.55.55:471][947]LogPlayLevel: PIE: World Init took: (0.001334s)
+[2015.11.22-22.55.55:471][947]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap to /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap (0.078344s)
+[2015.11.22-22.55.55:533][947]LogInit: XAudio2 using 'Högtalare (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2015.11.22-22.55.55:542][947]LogInit: FAudioDevice initialized.
+[2015.11.22-22.55.55:594][947]LogWorld: Game class is 'SW_Project2GameMode'
+[2015.11.22-22.55.55:627][947]LogWorld: Bringing World /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap up for play (max tick rate 0) at 2015.11.22-23.55.55
+[2015.11.22-22.55.55:627][947]LogActor:Warning: GameSession /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameSession_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.55.55:628][947]LogActor:Warning: GameNetworkManager /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameNetworkManager_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.55.55:628][947]LogWorld: Bringing up level for play took: 0.034071
+[2015.11.22-22.55.55:631][947]PIE: Info Play in editor start time for /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap -0.512
+[2015.11.22-22.55.55:631][947]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.55.58:087][168]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.55.58:166][168]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.55.58:280][169]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000789E1E0C20
+[2015.11.22-22.57.20:716][ 21]CompilerResultsLog: New page: Compilation - Nov 23, 2015, 12:57:20 AM
+[2015.11.22-22.57.20:716][ 21]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.22-22.57.20:716][ 21]CompilerResultsLog: Info Performing 2 actions (2 in parallel)
+[2015.11.22-22.57.20:716][ 21]CompilerResultsLog: Info Projectile.cpp
+[2015.11.22-22.57.20:716][ 21]CompilerResultsLog: Info [2/2] Link UE4Editor-SW_Project2-2792.dll
+[2015.11.22-22.57.20:716][ 21]CompilerResultsLog: Info    Creating library C:\Users\Stoffe\Documents\GitHub\SW_Project2\SW_Project2\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SW_Project2-2792.lib and object C:\Users\Stoffe\Documents\GitHub\SW_Project2\SW_Project2\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SW_Project2-2792.exp
+[2015.11.22-22.57.20:717][ 21]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.22-22.57.20:717][ 21]CompilerResultsLog: Info Total build time: 125,69 seconds
+[2015.11.22-22.57.20:717][ 21]LogMainFrame: MainFrame: Module compiling took 125.796 seconds
+[2015.11.22-22.57.20:717][ 21]LogActorComponent: UnregisterComponent: (/Engine/Transient.ProjectileComp) Not registered. Aborting.
+[2015.11.22-22.57.20:772][ 21]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000078A3433EC0
+[2015.11.22-22.57.20:773][ 21]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000789E8D0720
+[2015.11.22-22.57.20:813][ 21]LogHotReload: Re-instancing Projectile after hot-reload.
+[2015.11.22-22.57.20:987][ 21]LogContentBrowser: Native class hierarchy updated for 'SW_Project2' in 0.0019 seconds. Added 4 classes and 2 folders.
+[2015.11.22-22.57.20:992][ 21]Warning: HotReload successful (1 functions remapped  0 scriptstructs remapped)
+[2015.11.22-22.57.21:802][ 21]LogContentBrowser: Native class hierarchy populated in 0.0166 seconds. Added 1872 classes and 337 folders.
+[2015.11.22-22.57.23:962][173]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.57.23:962][173]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.22-22.57.23:962][173]PIE: New page: PIE session: FlyingExampleMap (Nov 23, 2015, 12:57:23 AM)
+[2015.11.22-22.57.23:962][173]LogPlayLevel: Creating play world package: /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap
+[2015.11.22-22.57.24:035][173]LogPlayLevel: PIE: StaticDuplicateObject took: (0.073061s)
+[2015.11.22-22.57.24:036][173]LogAIModule: Creating AISystem for world FlyingExampleMap
+[2015.11.22-22.57.24:037][173]LogPlayLevel: PIE: World Init took: (0.000991s)
+[2015.11.22-22.57.24:037][173]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap to /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap (0.074476s)
+[2015.11.22-22.57.24:158][173]LogInit: XAudio2 using 'Högtalare (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2015.11.22-22.57.24:168][173]LogInit: FAudioDevice initialized.
+[2015.11.22-22.57.24:221][173]LogWorld: Game class is 'SW_Project2GameMode'
+[2015.11.22-22.57.24:254][173]LogWorld: Bringing World /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap up for play (max tick rate 0) at 2015.11.22-23.57.24
+[2015.11.22-22.57.24:254][173]LogActor:Warning: GameSession /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameSession_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.57.24:255][173]LogActor:Warning: GameNetworkManager /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameNetworkManager_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.57.24:255][173]LogWorld: Bringing up level for play took: 0.033120
+[2015.11.22-22.57.24:257][173]PIE: Info Play in editor start time for /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap 0.115
+[2015.11.22-22.57.24:257][173]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.57.31:590][792]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.57.31:659][792]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.57.31:744][792]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000788FA81080
+[2015.11.22-22.57.45:944][ 14]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.57.45:944][ 14]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.22-22.57.45:945][ 14]PIE: New page: PIE session: FlyingExampleMap (Nov 23, 2015, 12:57:45 AM)
+[2015.11.22-22.57.45:945][ 14]LogPlayLevel: Creating play world package: /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap
+[2015.11.22-22.57.46:008][ 14]LogPlayLevel: PIE: StaticDuplicateObject took: (0.062964s)
+[2015.11.22-22.57.46:009][ 14]LogAIModule: Creating AISystem for world FlyingExampleMap
+[2015.11.22-22.57.46:009][ 14]LogPlayLevel: PIE: World Init took: (0.001209s)
+[2015.11.22-22.57.46:009][ 14]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap to /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap (0.064613s)
+[2015.11.22-22.57.46:009][ 14]LogActorComponent: UnregisterComponent: (/Engine/Transient.ProjectileComp) Not registered. Aborting.
+[2015.11.22-22.57.46:077][ 14]LogInit: XAudio2 using 'Högtalare (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2015.11.22-22.57.46:091][ 14]LogInit: FAudioDevice initialized.
+[2015.11.22-22.57.46:144][ 14]LogWorld: Game class is 'SW_Project2GameMode'
+[2015.11.22-22.57.46:178][ 14]LogWorld: Bringing World /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap up for play (max tick rate 0) at 2015.11.22-23.57.46
+[2015.11.22-22.57.46:178][ 14]LogActor:Warning: GameSession /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameSession_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.57.46:179][ 14]LogActor:Warning: GameNetworkManager /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap.FlyingExampleMap:PersistentLevel.GameNetworkManager_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.22-22.57.46:180][ 14]LogWorld: Bringing up level for play took: 0.034694
+[2015.11.22-22.57.46:182][ 14]PIE: Info Play in editor start time for /Game/FlyingCPP/Maps/UEDPIE_0_FlyingExampleMap 0.04
+[2015.11.22-22.57.46:182][ 14]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.57.48:977][267]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.57.49:032][267]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap' with GeneratedClass '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap_C' with ClassGeneratedBy '/Game/FlyingCPP/Maps/FlyingExampleMap.FlyingExampleMap:PersistentLevel.FlyingExampleMap'
+[2015.11.22-22.57.49:111][268]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000078FEB584A0
+[2015.11.22-22.57.53:859][561]LogActorComponent: UnregisterComponent: (/Engine/Transient.ProjectileComp) Not registered. Aborting.
+[2015.11.22-22.57.58:868][561]LogSavePackage: Save=3077.961670ms
+[2015.11.22-22.57.58:868][561]LogSavePackage: Moving '../../../../../../Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Saved/FlyingExampleMapA0935C1E4AA4D33CF177DEB757BEB985.tmp' to '../../../../../../Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Content/FlyingCPP/Maps/FlyingExampleMap.umap'
+[2015.11.22-22.57.58:873][561]LogSavePackage: Total save time: 3107.445456ms
+[2015.11.22-22.57.58:873][561]LogSavePackage:Warning: Finished SavePackage ../../../../../../Users/Stoffe/Documents/GitHub/SW_Project2/SW_Project2/Content/FlyingCPP/Maps/FlyingExampleMap.umap
+[2015.11.22-22.57.58:907][561]LogFileHelpers: Saving map 'FlyingExampleMap' took 3.237
+[2015.11.22-22.57.59:004][561]LogWindowsTextInputMethodSystem:Display: IME system now deactivated.
+[2015.11.22-22.57.59:294][562]Cmd: QUIT_EDITOR
+[2015.11.22-22.58.00:267][562]LogExit: Preparing to exit.
+[2015.11.22-22.58.01:208][562]LogExit: Editor shut down
+[2015.11.22-22.58.01:208][562]LogExit: Transaction tracking system shut down
+[2015.11.22-22.58.01:210][562]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000788D184E00
+[2015.11.22-22.58.01:211][562]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000007892DD9620
+[2015.11.22-22.58.01:212][562]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000007893462480
+[2015.11.22-22.58.01:212][562]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000078935F9940
+[2015.11.22-22.58.01:213][562]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000789ECFAFC0
+[2015.11.22-22.58.01:414][562]LogExit: Object subsystem successfully closed.
+[2015.11.22-22.58.01:436][562]LogD3D11RHI: Shutdown
+[2015.11.22-22.58.01:436][562]LogD3D11RHI: CleanupD3DDevice
+[2015.11.22-22.58.01:471][562]LogD3D11RHI: ~FD3D11DynamicRHI
+[2015.11.22-22.58.01:491][562]LogModuleManager: Shutting down and abandoning module BlueprintGraph (199)
+[2015.11.22-22.58.01:491][562]LogModuleManager: Shutting down and abandoning module CrashTracker (198)
+[2015.11.22-22.58.01:491][562]LogModuleManager: Shutting down and abandoning module SceneOutliner (197)
+[2015.11.22-22.58.01:491][562]LogModuleManager: Shutting down and abandoning module SuperSearch (196)
+[2015.11.22-22.58.01:491][562]LogModuleManager: Shutting down and abandoning module WidgetCarousel (195)
+[2015.11.22-22.58.01:491][562]LogModuleManager: Shutting down and abandoning module AddContentDialog (194)
+[2015.11.22-22.58.01:492][562]LogModuleManager: Shutting down and abandoning module EditorWidgets (193)
+[2015.11.22-22.58.01:492][562]LogModuleManager: Shutting down and abandoning module CollectionManager (192)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module StatsViewer (191)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module FoliageEdit (190)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module LandscapeEditor (189)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module ActorPickerMode (188)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module GeometryMode (187)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module TextureAlignMode (186)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module BspMode (185)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module PlacementMode (184)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module AutomationWorker (183)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module CharacterAI (182)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module SmartSnapping (181)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module ViewportSnapping (180)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module LogVisualizer (179)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (178)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module IntroTutorials (177)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module EditorLiveStreaming (176)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (175)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module HTML5PlatformEditor (174)
+[2015.11.22-22.58.01:493][562]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (173)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (172)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (171)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (170)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module MergeActors (169)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module SizeMap (168)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module TreeMap (167)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module ReferenceViewer (166)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module LocalizationService (165)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (164)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module HardwareTargeting (163)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (162)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module UndoHistory (161)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (160)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module UserFeedback (159)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module XmlParser (158)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module Blutility (157)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (156)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (155)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module InputBindingEditor (154)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (153)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module SettingsEditor (152)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module ProjectLauncher (151)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module SessionFrontend (150)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module ProfilerClient (149)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (148)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module DeviceManager (147)
+[2015.11.22-22.58.02:198][562]LogModuleManager: Shutting down and abandoning module AutomationController (146)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module AutomationWindow (145)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module Layers (144)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (143)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module DetailCustomizations (142)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module PackagesDialog (141)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module Persona (140)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module Kismet (139)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module GraphEditor (138)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module ClassViewer (137)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module Toolbox (136)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module ModuleUI (135)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module MovieSceneTools (134)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module OutputLog (133)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module GammaUI (132)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module Documentation (131)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module GameLiveStreaming (130)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (129)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module AnalyticsET (128)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module Analytics (127)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module AITestSuite (126)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module GameplayDebugger (125)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module AIModule (124)
+[2015.11.22-22.58.02:199][562]LogModuleManager: Shutting down and abandoning module ProfilerService (123)
+[2015.11.22-22.58.02:333][562]LogModuleManager: Shutting down and abandoning module TaskGraph (122)
+[2015.11.22-22.58.02:333][562]LogModuleManager: Shutting down and abandoning module SlateRemote (121)
+[2015.11.22-22.58.02:333][562]LogModuleManager: Shutting down and abandoning module SteamVRController (120)
+[2015.11.22-22.58.02:333][562]LogModuleManager: Shutting down and abandoning module SteamVR (119)
+[2015.11.22-22.58.02:333][562]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (118)
+[2015.11.22-22.58.02:333][562]LogModuleManager: Shutting down and abandoning module OculusRift (117)
+[2015.11.22-22.58.02:333][562]LogModuleManager: Shutting down and abandoning module OculusLibrary (116)
+[2015.11.22-22.58.02:333][562]LogModuleManager: Shutting down and abandoning module LeapMotionController (115)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (114)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module CableComponent (113)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (112)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module MessagingDebugger (111)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (110)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module HTML5Networking (109)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (108)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module PluginBrowser (107)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module EpicSurvey (106)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module DesktopPlatform (105)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (104)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module UObjectPlugin (103)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (102)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (101)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module SourceControl (100)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module GitSourceControl (99)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeEditor (98)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (97)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (96)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module MeshPaint (95)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module SlateReflector (94)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module HotReload (93)
+[2015.11.22-22.58.02:340][562]LogModuleManager: Shutting down and abandoning module MainFrame (92)
+[2015.11.22-22.58.02:341][562]LogModuleManager: Shutting down and abandoning module LevelEditor (91)
+[2015.11.22-22.58.02:341][562]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (90)
+[2015.11.22-22.58.02:342][562]LogModuleManager: Shutting down and abandoning module AssetRegistry (89)
+[2015.11.22-22.58.02:398][562]LogModuleManager: Shutting down and abandoning module ContentBrowser (88)
+[2015.11.22-22.58.02:399][562]LogModuleManager: Shutting down and abandoning module Paper2DEditor (87)
+[2015.11.22-22.58.02:399][562]LogModuleManager: Shutting down and abandoning module SW_Project2 (86)
+[2015.11.22-22.58.02:399][562]LogModuleManager: Shutting down and abandoning module UdpMessaging (85)
+[2015.11.22-22.58.02:500][562]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeRuntime (84)
+[2015.11.22-22.58.02:500][562]LogModuleManager: Shutting down and abandoning module Paper2D (83)
+[2015.11.22-22.58.02:500][562]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (82)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module Media (81)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module WmfMedia (80)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (79)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module GameplayTasksEditor (78)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module PropertyEditor (77)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (76)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module FunctionalTesting (75)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (74)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (73)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module MessageLog (72)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module Sequencer (71)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module AssetTools (70)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module UMGEditor (69)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module UMG (68)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module Slate (67)
+[2015.11.22-22.58.02:502][562]LogModuleManager: Shutting down and abandoning module EditorStyle (66)
+[2015.11.22-22.58.02:505][562]LogModuleManager: Shutting down and abandoning module SessionServices (65)
+[2015.11.22-22.58.02:505][562]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (64)
+[2015.11.22-22.58.02:505][562]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (63)
+[2015.11.22-22.58.02:505][562]LogModuleManager: Shutting down and abandoning module XAudio2 (62)
+[2015.11.22-22.58.02:505][562]LogModuleManager: Shutting down and abandoning module Networking (60)
+[2015.11.22-22.58.02:505][562]LogModuleManager: Shutting down and abandoning module Core (59)
+[2015.11.22-22.58.02:505][562]LogModuleManager: Shutting down and abandoning module KismetCompiler (58)
+[2015.11.22-22.58.02:505][562]LogModuleManager: Shutting down and abandoning module PhysXFormats (57)
+[2015.11.22-22.58.02:505][562]LogModuleManager: Shutting down and abandoning module MeshUtilities (56)
+[2015.11.22-22.58.02:505][562]LogModuleManager: Shutting down and abandoning module CookingStats (55)
+[2015.11.22-22.58.02:506][562]LogModuleManager: Shutting down and abandoning module DerivedDataCache (54)
+[2015.11.22-22.58.02:520][562]LogDerivedDataCache: Shutdown
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (53)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (52)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (51)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (50)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (49)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (48)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (47)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module ImageWrapper (46)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (45)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module TextureFormatAndroid (44)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (43)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (42)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (41)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (40)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (39)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (38)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module Messaging (37)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (36)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module HTML5TargetPlatform (35)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module Android_PVRTCTargetPlatform (34)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module Android_ETC2TargetPlatform (33)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module Android_ETC1TargetPlatform (32)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module Android_DXTTargetPlatform (31)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module Android_ATCTargetPlatform (30)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module Android_ASTCTargetPlatform (29)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (28)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (27)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module WindowsServerTargetPlatform (26)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module WindowsNoEditorTargetPlatform (25)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module WindowsClientTargetPlatform (24)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module AllDesktopTargetPlatform (23)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module TargetPlatform (22)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module InputCore (21)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module Settings (20)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (18)
+[2015.11.22-22.58.02:520][562]LogModuleManager: Shutting down and abandoning module HTTP (17)
+[2015.11.22-22.58.03:521][562]LogModuleManager: Shutting down and abandoning module XMPP (16)
+[2015.11.22-22.58.03:521][562]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (15)
+[2015.11.22-22.58.03:521][562]LogModuleManager: Shutting down and abandoning module TextureCompressor (14)
+[2015.11.22-22.58.03:521][562]LogModuleManager: Shutting down and abandoning module ShaderCore (13)
+[2015.11.22-22.58.03:521][562]LogModuleManager: Shutting down and abandoning module Landscape (12)
+[2015.11.22-22.58.03:521][562]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (11)
+[2015.11.22-22.58.03:522][562]LogModuleManager: Shutting down and abandoning module OpenGLDrv (10)
+[2015.11.22-22.58.03:522][562]LogModuleManager: Shutting down and abandoning module D3D11RHI (9)
+[2015.11.22-22.58.03:522][562]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (8)
+[2015.11.22-22.58.03:522][562]LogModuleManager: Shutting down and abandoning module Renderer (7)
+[2015.11.22-22.58.03:522][562]LogModuleManager: Shutting down and abandoning module Engine (6)
+[2015.11.22-22.58.03:522][562]LogModuleManager: Shutting down and abandoning module CoreUObject (5)
+[2015.11.22-22.58.03:522][562]LogModuleManager: Shutting down and abandoning module NetworkFile (4)
+[2015.11.22-22.58.03:522][562]LogModuleManager: Shutting down and abandoning module StreamingFile (3)
+[2015.11.22-22.58.03:522][562]LogModuleManager: Shutting down and abandoning module SandboxFile (2)
+[2015.11.22-22.58.03:522][562]LogModuleManager: Shutting down and abandoning module PakFile (1)
+[2015.11.22-22.58.03:522][562]LogExit: Exiting.
+[2015.11.22-22.58.03:523][562]Log file closed, 11/22/15 23:58:03

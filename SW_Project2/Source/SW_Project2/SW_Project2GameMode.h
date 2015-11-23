@@ -12,16 +12,17 @@ class ASW_Project2GameMode : public AGameMode
 public:
 	ASW_Project2GameMode();
 	
-	virtual void BeginPlay() override;
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Time")
 	float time;
 
-	UPROPERTY(EditDefaultsOnly)
-	TSubclassOf<class UUserWidget> HUDWidgetClass;
+	/*TSubclassOf<class UUserWidget> HUDWidgetClass;
 
 	UPROPERTY()
-	class UUserWidget* CurrentWidget;
+	class UUserWidget* CurrentWidget;*/
+
+	virtual void BeginPlay() override;
+
+	virtual void Tick(float DeltaSeconds) override;
 
 };
 

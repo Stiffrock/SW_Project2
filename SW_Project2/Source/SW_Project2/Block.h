@@ -20,6 +20,9 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickup")
+	bool Pickup;
+
 
 	UPROPERTY(EditAnywhere)
 	UStaticMeshComponent* StaticMesh;

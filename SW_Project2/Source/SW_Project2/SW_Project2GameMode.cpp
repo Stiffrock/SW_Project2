@@ -3,7 +3,7 @@
 #include "SW_Project2.h"
 #include "SW_Project2GameMode.h"
 #include "SW_Project2Pawn.h"
-#include "Blueprint/UserWidget.h"
+//#include "Blueprint/UserWidget.h"
 
 
 ASW_Project2GameMode::ASW_Project2GameMode()
@@ -17,13 +17,21 @@ void ASW_Project2GameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-	if (HUDWidgetClass)
+	/*if (HUDWidgetClass)
 	{
-		CurrentWidget = CreateWidget<UUserWidget>(GetWorld(), HUDWidgetClass);
+	//	CurrentWidget = CreateWidget<UUserWidget>(GetWorld(), HUDWidgetClass);
 
 		if (CurrentWidget)
 		{
-			CurrentWidget->AddViewport();
+			//CurrentWidget->AddViewport();
 		}
-	}
+	}*/
+}
+
+void ASW_Project2GameMode::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+
+	time -= DeltaSeconds;
+
 }
