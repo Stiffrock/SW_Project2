@@ -15,6 +15,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Time")
 	float time;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
+		float health;
+
 	/*TSubclassOf<class UUserWidget> HUDWidgetClass;
 
 	UPROPERTY()

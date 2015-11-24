@@ -11,6 +11,7 @@ ASW_Project2GameMode::ASW_Project2GameMode()
 	// set default pawn class to our flying pawn
 	DefaultPawnClass = ASW_Project2Pawn::StaticClass();
 	time = 30.f;
+	health = 1.0f;
 }
 
 void ASW_Project2GameMode::BeginPlay()

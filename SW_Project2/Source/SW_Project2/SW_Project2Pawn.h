@@ -31,6 +31,19 @@ public:
 	virtual void NotifyHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit) override;
 	// End AActor overrides
 
+	UPointLightComponent* PointLight;
+
+	float OffsetX;
+	float OffsetY;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Player)
+	float health;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Player)
+	float energy;
+
+	bool bThrust;
+
 protected:
 
 	// Begin APawn overrides

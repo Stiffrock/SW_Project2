@@ -29,11 +29,11 @@ void EmptyLinkFunctionForGeneratedCodeSW_Project2() {}
 	void ASW_Project2GameMode::StaticRegisterNativesASW_Project2GameMode()
 	{
 	}
-	IMPLEMENT_CLASS(ASW_Project2GameMode, 966973165);
+	IMPLEMENT_CLASS(ASW_Project2GameMode, 3041963933);
 	void ASW_Project2Pawn::StaticRegisterNativesASW_Project2Pawn()
 	{
 	}
-	IMPLEMENT_CLASS(ASW_Project2Pawn, 2148557060);
+	IMPLEMENT_CLASS(ASW_Project2Pawn, 880780595);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
@@ -279,6 +279,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_health = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("health"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(health, ASW_Project2GameMode), 0x0000000000000005);
 				UProperty* NewProp_time = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("time"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(time, ASW_Project2GameMode), 0x0000000000000005);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
@@ -289,6 +290,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("SW_Project2GameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("SW_Project2GameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+				MetaData->SetValue(NewProp_health, TEXT("Category"), TEXT("Player"));
+				MetaData->SetValue(NewProp_health, TEXT("ModuleRelativePath"), TEXT("SW_Project2GameMode.h"));
 				MetaData->SetValue(NewProp_time, TEXT("Category"), TEXT("Time"));
 				MetaData->SetValue(NewProp_time, TEXT("ModuleRelativePath"), TEXT("SW_Project2GameMode.h"));
 #endif
@@ -322,6 +325,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_MaxSpeed = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MaxSpeed"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(MaxSpeed, ASW_Project2Pawn), 0x0000000000000001);
 				UProperty* NewProp_TurnSpeed = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("TurnSpeed"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(TurnSpeed, ASW_Project2Pawn), 0x0000000000000001);
 				UProperty* NewProp_Acceleration = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Acceleration"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(Acceleration, ASW_Project2Pawn), 0x0000000000000001);
+				UProperty* NewProp_energy = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("energy"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(energy, ASW_Project2Pawn), 0x0000000000000005);
+				UProperty* NewProp_health = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("health"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(health, ASW_Project2Pawn), 0x0000000000000005);
 				UProperty* NewProp_Projectile_BP = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Projectile_BP"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(Projectile_BP, ASW_Project2Pawn), 0x0004000000000000, Z_Construct_UClass_AProjectile_NoRegister());
 				UProperty* NewProp_Camera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Camera"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Camera, ASW_Project2Pawn), 0x00000000000b001d, Z_Construct_UClass_UCameraComponent_NoRegister());
 				UProperty* NewProp_SpringArm = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("SpringArm"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(SpringArm, ASW_Project2Pawn), 0x00000000000b001d, Z_Construct_UClass_USpringArmComponent_NoRegister());
@@ -346,6 +351,10 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_Acceleration, TEXT("Category"), TEXT("Plane"));
 				MetaData->SetValue(NewProp_Acceleration, TEXT("ModuleRelativePath"), TEXT("SW_Project2Pawn.h"));
 				MetaData->SetValue(NewProp_Acceleration, TEXT("ToolTip"), TEXT("How quickly forward speed changes"));
+				MetaData->SetValue(NewProp_energy, TEXT("Category"), TEXT("Player"));
+				MetaData->SetValue(NewProp_energy, TEXT("ModuleRelativePath"), TEXT("SW_Project2Pawn.h"));
+				MetaData->SetValue(NewProp_health, TEXT("Category"), TEXT("Player"));
+				MetaData->SetValue(NewProp_health, TEXT("ModuleRelativePath"), TEXT("SW_Project2Pawn.h"));
 				MetaData->SetValue(NewProp_Projectile_BP, TEXT("ModuleRelativePath"), TEXT("SW_Project2Pawn.h"));
 				MetaData->SetValue(NewProp_Camera, TEXT("AllowPrivateAccess"), TEXT("true"));
 				MetaData->SetValue(NewProp_Camera, TEXT("Category"), TEXT("Camera"));
@@ -378,7 +387,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SW_Project2")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xBDBA8572;
+			Guid.A = 0x8AE7CD38;
 			Guid.B = 0x5D8244EA;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;

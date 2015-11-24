@@ -5,6 +5,7 @@
 #include "Engine.h"
 #include "Projectile.h"
 #include "Block.h"
+#include "Engine.h"
 #include "SW_Project2GameMode.h"
 
 ASW_Project2Pawn::ASW_Project2Pawn()
@@ -33,6 +34,9 @@ ASW_Project2Pawn::ASW_Project2Pawn()
 	SpringArm->bEnableCameraLag = true;
 	SpringArm->CameraLagSpeed = 3.f;
 
+	PointLight = CreateDefaultSubobject<UPointLightComponent>(FName(TEXT("TestLight")));
+	PointLight->AttachTo(this->GetPlaneMesh(), "Socket_Shoot");
+
 	// Create camera component 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera0"));
 	Camera->AttachTo(SpringArm, USpringArmComponent::SocketName);
@@ -45,6 +49,11 @@ ASW_Project2Pawn::ASW_Project2Pawn()
 	MinSpeed = 500.f;
 	CurrentForwardSpeed = 500.f;
 
+	energy = 1.0f;
+	health = 1.0f;
+
+	bThrust = false;
+
 	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint(TEXT("Blueprint'/Game/Projectile_BP.Projectile_BP'"));
 	if (ItemBlueprint.Object)
 	Projectile_BP = (UClass*)ItemBlueprint.Object->GeneratedClass;
@@ -54,6 +63,13 @@ void ASW_Project2Pawn::Tick(float DeltaSeconds)
 {
 	const FVector LocalMove = FVector(CurrentForwardSpeed * DeltaSeconds, 0.f, 0.f);
 
+	if (bThrust && energy != 0.0f)
+	{
+		energy -= 0.5f * DeltaSeconds;
+	}
+	else
+		energy += 0.1f * DeltaSeconds;
+
 	// Move plan forwards (with sweep so we stop when we collide with things)
 	AddActorLocalOffset(LocalMove, true);
 
@@ -61,8 +77,13 @@ void ASW_Project2Pawn::Tick(float DeltaSeconds)
 	FRotator DeltaRotation(0,0,0);
 	FRotator CurrentRotation = GetActorRotation();
 	DeltaRotation.Pitch = CurrentPitchSpeed * DeltaSeconds;
+
 	DeltaRotation.Yaw = CurrentYawSpeed * DeltaSeconds;
 	DeltaRotation.Roll = CurrentRollSpeed * DeltaSeconds;
+
+	OffsetY = CurrentPitchSpeed * DeltaSeconds;
+	OffsetX = CurrentYawSpeed * DeltaSeconds;
+
 
 	// Rotate and limit plane
 	if (CurrentRotation.Pitch >= 30.0f && DeltaRotation.Pitch > 0.f)
@@ -108,6 +129,7 @@ void ASW_Project2Pawn::NotifyHit(class UPrimitiveComponent* MyComp, class AActor
 		}
 		else
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("TakeDamage"));		
+		health -= 0.2f;
 		//TakeDamage
 	}
 
@@ -132,24 +154,45 @@ void ASW_Project2Pawn::ThrustInput(float Val)
 {
 	// Is there no input?
 	bool bHasInput = !FMath::IsNearlyEqual(Val, 0.f);
-	// If input is not held down, reduce speed
-	float CurrentAcc = bHasInput ? (Val * Acceleration) : (-0.5f * Acceleration);
-	// Calculate new speed
-	float NewForwardSpeed = CurrentForwardSpeed + (GetWorld()->GetDeltaSeconds() * CurrentAcc);
-	// Clamp between MinSpeed and MaxSpeed
-	CurrentForwardSpeed = FMath::Clamp(NewForwardSpeed, MinSpeed, MaxSpeed);
+	if (energy >= 0.0f)
+	{
+		// If input is not held down, reduce speed
+		float CurrentAcc = bHasInput ? (Val * Acceleration) : (-0.5f * Acceleration);
+		// Calculate new speed
+		float NewForwardSpeed = CurrentForwardSpeed + (GetWorld()->GetDeltaSeconds() * CurrentAcc);
+		// Clamp between MinSpeed and MaxSpeed
+		CurrentForwardSpeed = FMath::Clamp(NewForwardSpeed, MinSpeed, MaxSpeed);
+
+		if (bHasInput)		
+			bThrust = true;		
+		else
+			bThrust = false;
+	}
+	else
+	{
+		bHasInput = false;
+		bThrust = false;
+		float CurrentAcc = bHasInput ? (Val * Acceleration) : (-0.5f * Acceleration);
+		float NewForwardSpeed = CurrentForwardSpeed + (GetWorld()->GetDeltaSeconds() * CurrentAcc);
+		CurrentForwardSpeed = FMath::Clamp(NewForwardSpeed, MinSpeed, MaxSpeed);
+	}
+
 }
 
 void ASW_Project2Pawn::MoveUpInput(float Val)
 {
 	// Target pitch speed is based in input
 	float TargetPitchSpeed = (Val * TurnSpeed * 1.f);
+	
 
 	// When steering, we decrease pitch slightly
 	TargetPitchSpeed += (FMath::Abs(CurrentYawSpeed) * -0.2f);
 
+
+
 	// Smoothly interpolate to target pitch speed
 	CurrentPitchSpeed = FMath::FInterpTo(CurrentPitchSpeed, TargetPitchSpeed, GetWorld()->GetDeltaSeconds(), 2.f);
+
 }
 
 void ASW_Project2Pawn::MoveRightInput(float Val)
@@ -159,6 +202,8 @@ void ASW_Project2Pawn::MoveRightInput(float Val)
 
 	// Smoothly interpolate to target yaw speed
 	CurrentYawSpeed = FMath::FInterpTo(CurrentYawSpeed, TargetYawSpeed, GetWorld()->GetDeltaSeconds(), 2.f);
+
+
 
 	// Is there any left/right input?
 	const bool bIsTurning = FMath::Abs(Val) > 0.2f;
@@ -175,7 +220,16 @@ void ASW_Project2Pawn::ShootProjectile()
 {
 	
 	const FRotator SpawnRotation = SpringArm->GetComponentRotation();
-	const FVector SpawnLocation = GetActorLocation() + FVector(200.f, 0.f, 0.F);
+	FRotator CurrentRotation = GetActorRotation();
+
+	FVector SocketPos = PointLight->GetComponentLocation();
+	FRotator SocketRotation = PointLight->GetComponentRotation();
+
+
+
+	
+	//const FVector SpawnLocation = GetActorLocation() + FVector(200.f - Offset.X, 0.f - Offset.Y, 0.f - Offset.Z);
+	const FVector SpawnLocation = SocketPos + FVector(200.f, 0, 0);
 
 	UWorld* const World = GetWorld();
 	if (World != NULL)
@@ -183,6 +237,6 @@ void ASW_Project2Pawn::ShootProjectile()
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Shoot"));
 		FActorSpawnParameters SpawnParams;
 		SpawnParams.Instigator = this;
-		AProjectile* Projectile = World->SpawnActor<AProjectile>(Projectile_BP, SpawnLocation, SpawnRotation, SpawnParams);
+		AProjectile* Projectile = World->SpawnActor<AProjectile>(Projectile_BP, SpawnLocation, SocketRotation, SpawnParams);
 	}
 }
