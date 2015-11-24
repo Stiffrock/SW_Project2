@@ -12,7 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeSW_Project2() {}
 	void ABlock::StaticRegisterNativesABlock()
 	{
 	}
-	IMPLEMENT_CLASS(ABlock, 541016279);
+	IMPLEMENT_CLASS(ABlock, 371022138);
 	void AMyHUD::StaticRegisterNativesAMyHUD()
 	{
 	}
@@ -85,6 +85,8 @@ void EmptyLinkFunctionForGeneratedCodeSW_Project2() {}
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_CollisionComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CollisionComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CollisionComp, ABlock), 0x00000000000b0009, Z_Construct_UClass_USphereComponent_NoRegister());
 				UProperty* NewProp_StaticMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("StaticMesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(StaticMesh, ABlock), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+				CPP_BOOL_PROPERTY_BITMASK_STRUCT(Finish, ABlock, bool);
+				UProperty* NewProp_Finish = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Finish"), RF_Public|RF_Transient|RF_Native) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(Finish, ABlock), 0x0000000000000005, CPP_BOOL_PROPERTY_BITMASK(Finish, ABlock), sizeof(bool), true);
 				CPP_BOOL_PROPERTY_BITMASK_STRUCT(Pickup, ABlock, bool);
 				UProperty* NewProp_Pickup = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Pickup"), RF_Public|RF_Transient|RF_Native) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(Pickup, ABlock), 0x0000000000000005, CPP_BOOL_PROPERTY_BITMASK(Pickup, ABlock), sizeof(bool), true);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
@@ -99,6 +101,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_StaticMesh, TEXT("Category"), TEXT("Block"));
 				MetaData->SetValue(NewProp_StaticMesh, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_StaticMesh, TEXT("ModuleRelativePath"), TEXT("Block.h"));
+				MetaData->SetValue(NewProp_Finish, TEXT("Category"), TEXT("Pickup"));
+				MetaData->SetValue(NewProp_Finish, TEXT("ModuleRelativePath"), TEXT("Block.h"));
 				MetaData->SetValue(NewProp_Pickup, TEXT("Category"), TEXT("Pickup"));
 				MetaData->SetValue(NewProp_Pickup, TEXT("ModuleRelativePath"), TEXT("Block.h"));
 #endif
@@ -387,7 +391,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SW_Project2")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x8AE7CD38;
+			Guid.A = 0xE7FC5C85;
 			Guid.B = 0x5D8244EA;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;

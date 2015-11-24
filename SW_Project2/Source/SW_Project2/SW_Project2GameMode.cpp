@@ -35,4 +35,19 @@ void ASW_Project2GameMode::Tick(float DeltaSeconds)
 
 	time -= DeltaSeconds;
 
+
+	//Hanlde player input, fixxa
+	APawn* pawn = GetWorld()->GetFirstPlayerController()->GetPawn();
+		//this->DefaultPawnClass
+	ASW_Project2Pawn* thePawn = Cast<ASW_Project2Pawn>(pawn);
+
+	if (thePawn->bFinish)
+	{
+	
+		UGameplayStatics::OpenLevel(this, TEXT("/Game/TransitionMap"), true);
+	//	UGameplayStatics::OpenLevel((this, FName(TEXT("NewMap1"),false ));
+
+
+	}
+
 }

@@ -53,6 +53,7 @@ ASW_Project2Pawn::ASW_Project2Pawn()
 	health = 1.0f;
 
 	bThrust = false;
+	bFinish = false;
 
 	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint(TEXT("Blueprint'/Game/Projectile_BP.Projectile_BP'"));
 	if (ItemBlueprint.Object)
@@ -131,11 +132,18 @@ void ASW_Project2Pawn::NotifyHit(class UPrimitiveComponent* MyComp, class AActor
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("TakeDamage"));		
 		health -= 0.2f;
 		//TakeDamage
+		Other->Destroy();
+		CurrentForwardSpeed = 0.f;
+
+		if (block->Finish)
+		{
+			bFinish = true;
+		}
 	}
 
-	Other->Destroy();
+	
 	// Set velocity to zero upon collision
-	CurrentForwardSpeed = 0.f;
+
 }
 
 

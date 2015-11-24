@@ -23,6 +23,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickup")
 	bool Pickup;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickup")
+	bool Finish;
+
 
 	UPROPERTY(EditAnywhere)
 	UStaticMeshComponent* StaticMesh;

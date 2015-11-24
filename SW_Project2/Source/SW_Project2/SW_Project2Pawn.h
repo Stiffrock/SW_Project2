@@ -43,6 +43,7 @@ public:
 	float energy;
 
 	bool bThrust;
+	bool bFinish;
 
 protected:
 
