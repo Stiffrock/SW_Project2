@@ -42,6 +42,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Player)
 	float energy;
 
+
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Shoot)
+	FVector MuzzleOffset;
+
 	bool bThrust;
 	bool bFinish;
 

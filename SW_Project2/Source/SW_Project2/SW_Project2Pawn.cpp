@@ -49,6 +49,8 @@ ASW_Project2Pawn::ASW_Project2Pawn()
 	MinSpeed = 500.f;
 	CurrentForwardSpeed = 500.f;
 
+	MuzzleOffset = FVector(200.f, 0.f, 0.f);
+
 	energy = 1.0f;
 	health = 1.0f;
 
@@ -125,25 +127,22 @@ void ASW_Project2Pawn::NotifyHit(class UPrimitiveComponent* MyComp, class AActor
 			AGameMode* gModePtr = GetWorld()->GetAuthGameMode();
 			ASW_Project2GameMode* GameModePtr = Cast<ASW_Project2GameMode>(gModePtr);
 			GameModePtr->time += 10.0f;
-
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("TakeDamage"));
+			Other->Destroy();
 		}
 		else
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("TakeDamage"));		
-		health -= 0.2f;
-		//TakeDamage
-		Other->Destroy();
-		CurrentForwardSpeed = 0.f;
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("TakeDamage"));
+			health -= 0.2f;
+			Other->Destroy();
+			CurrentForwardSpeed = 0.f;
+		}
 
 		if (block->Finish)
 		{
 			bFinish = true;
 		}
 	}
-
-	
 	// Set velocity to zero upon collision
-
 }
 
 
@@ -190,17 +189,11 @@ void ASW_Project2Pawn::ThrustInput(float Val)
 void ASW_Project2Pawn::MoveUpInput(float Val)
 {
 	// Target pitch speed is based in input
-	float TargetPitchSpeed = (Val * TurnSpeed * 1.f);
-	
-
+	float TargetPitchSpeed = (Val * TurnSpeed * 1.f);	
 	// When steering, we decrease pitch slightly
 	TargetPitchSpeed += (FMath::Abs(CurrentYawSpeed) * -0.2f);
-
-
-
 	// Smoothly interpolate to target pitch speed
 	CurrentPitchSpeed = FMath::FInterpTo(CurrentPitchSpeed, TargetPitchSpeed, GetWorld()->GetDeltaSeconds(), 2.f);
-
 }
 
 void ASW_Project2Pawn::MoveRightInput(float Val)
@@ -227,24 +220,46 @@ void ASW_Project2Pawn::MoveRightInput(float Val)
 void ASW_Project2Pawn::ShootProjectile()
 {
 	
-	const FRotator SpawnRotation = SpringArm->GetComponentRotation();
-	FRotator CurrentRotation = GetActorRotation();
-
-	FVector SocketPos = PointLight->GetComponentLocation();
-	FRotator SocketRotation = PointLight->GetComponentRotation();
-
-
-
+	/*const FRotator SpawnRotation = SpringArm->GetComponentRotation(); 
 	
+	const FVector SpawnLocation = GetActorLocation() + FVector(200.f, 0.f, 0.f);
+	const FRotator CurrentRotation = GetActorRotation();
+
+	//FVector SocketPos = PointLight->GetComponentLocation();
+	//FRotator SocketRotation = PointLight->GetComponentRotation();
+	//const FVector MuzzleLocation = 
+
 	//const FVector SpawnLocation = GetActorLocation() + FVector(200.f - Offset.X, 0.f - Offset.Y, 0.f - Offset.Z);
-	const FVector SpawnLocation = SocketPos + FVector(200.f, 0, 0);
+	//const FVector SpawnLocation = SocketPos + FVector(200.f, 0, 0);
+	
+	FVector const MuzzleLocation = SpawnLocation + FTransform(CurrentRotation).TransformVector(MuzzleOffset);
+	FRotator MuzzleRotation = CurrentRotation;*/
+
+
+	FVector CameraLoc = GetActorLocation();
+	FRotator CameraRot = GetActorRotation();
+	FVector const MuzzleLocation = CameraLoc + FTransform(CameraRot).TransformVector(MuzzleOffset);
+	FRotator MuzzleRotation = CameraRot;
+
+
 
 	UWorld* const World = GetWorld();
+	if (World)
+	{
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.Owner = this;
+		SpawnParams.Instigator = Instigator;
+
+		AProjectile* Projectile = World->SpawnActor<AProjectile>(Projectile_BP, MuzzleLocation, MuzzleRotation, SpawnParams);
+	}
+
+	/*UWorld* const World = GetWorld();
 	if (World != NULL)
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Shoot"));
 		FActorSpawnParameters SpawnParams;
 		SpawnParams.Instigator = this;
-		AProjectile* Projectile = World->SpawnActor<AProjectile>(Projectile_BP, SpawnLocation, SocketRotation, SpawnParams);
-	}
+		AProjectile* Projectile = World->SpawnActor<AProjectile>(Projectile_BP, MuzzleLocation, MuzzleRotation, SpawnParams);
+	}*/
 }
+
