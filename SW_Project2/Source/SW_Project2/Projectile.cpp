@@ -38,14 +38,8 @@ void AProjectile::OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVec
 
 	if (OtherActor == block)
 	{
-		if (block->Pickup || block->Finish)
-		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Pickup/Finish block hit detected"));
-		}
-		else
-		{
-			OtherActor->Destroy();
-		}		
+		if (!block->Pickup && !block->Finish)
+			OtherActor->Destroy();	
 	}
 	this->Destroy();
 
