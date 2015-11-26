@@ -46,8 +46,8 @@ ASW_Project2Pawn::ASW_Project2Pawn()
 	Acceleration = 500.f;
 	TurnSpeed = 50.f;
 	MaxSpeed = 4000.f;
-	MinSpeed = 500.f;
-	CurrentForwardSpeed = 500.f;
+	MinSpeed = 1000.f;
+	CurrentForwardSpeed = 1200.f;
 
 	MuzzleOffset = FVector(200.f, 0.f, 0.f);
 
@@ -66,52 +66,58 @@ void ASW_Project2Pawn::Tick(float DeltaSeconds)
 {
 	const FVector LocalMove = FVector(CurrentForwardSpeed * DeltaSeconds, 0.f, 0.f);
 
-	if (bThrust && energy != 0.0f)
+	AGameMode* gameModePtr = GetWorld()->GetAuthGameMode();
+	ASW_Project2GameMode* ProjectGameModePtr = Cast<ASW_Project2GameMode>(gameModePtr);
+
+	if (health <= 0.0f)
+		this->Destroy();
+
+	if (!ProjectGameModePtr->bMapPause)
 	{
-		energy -= 0.5f * DeltaSeconds;
+	
+
+		// Move plan forwards (with sweep so we stop when we collide with things)
+		AddActorLocalOffset(LocalMove, true);
+		SetEnergy(DeltaSeconds);
+		// Calculate change in rotation this frame
+		FRotator DeltaRotation(0, 0, 0);
+		FRotator CurrentRotation = GetActorRotation();
+
+		DeltaRotation.Pitch = CurrentPitchSpeed * DeltaSeconds;
+		DeltaRotation.Yaw = CurrentYawSpeed * DeltaSeconds;
+		DeltaRotation.Roll = CurrentRollSpeed * DeltaSeconds;
+
+
+		// Rotate and limit plane
+		if (CurrentRotation.Pitch >= 30.0f && DeltaRotation.Pitch > 0.f)
+			DeltaRotation.Pitch = 0.f;
+
+		if (CurrentRotation.Pitch <= -30.0f && DeltaRotation.Pitch < 0.f)
+			DeltaRotation.Pitch = 0.f;
+
+		if (CurrentRotation.Yaw >= 30.0f && DeltaRotation.Yaw > 0.f)
+			DeltaRotation.Yaw = 0.f;
+
+		if (CurrentRotation.Yaw <= -30.0f && DeltaRotation.Yaw < 0.f)
+			DeltaRotation.Yaw = 0.f;
+
+		AddActorLocalRotation(DeltaRotation);
+
 	}
 	else
-		energy += 0.1f * DeltaSeconds;
-
-	// Move plan forwards (with sweep so we stop when we collide with things)
-	AddActorLocalOffset(LocalMove, true);
-
-	// Calculate change in rotation this frame
-	FRotator DeltaRotation(0,0,0);
-	FRotator CurrentRotation = GetActorRotation();
-	DeltaRotation.Pitch = CurrentPitchSpeed * DeltaSeconds;
-
-	DeltaRotation.Yaw = CurrentYawSpeed * DeltaSeconds;
-	DeltaRotation.Roll = CurrentRollSpeed * DeltaSeconds;
-
-	OffsetY = CurrentPitchSpeed * DeltaSeconds;
-	OffsetX = CurrentYawSpeed * DeltaSeconds;
-
-
-	// Rotate and limit plane
-	if (CurrentRotation.Pitch >= 30.0f && DeltaRotation.Pitch > 0.f)
-	{
-		DeltaRotation.Pitch = 0.f;
-	}
-
-	if (CurrentRotation.Pitch <= -30.0f && DeltaRotation.Pitch < 0.f)
-	{
-		DeltaRotation.Pitch = 0.f;
-	}
-
-	if (CurrentRotation.Yaw >= 30.0f && DeltaRotation.Yaw > 0.f)
-	{
-		DeltaRotation.Yaw = 0.f;
-	}
-
-	if (CurrentRotation.Yaw <= -30.0f && DeltaRotation.Yaw < 0.f)
-	{
-		DeltaRotation.Yaw = 0.f;
-	}
-	AddActorLocalRotation(DeltaRotation);
+	CurrentForwardSpeed = 0.0f;
 
 	// Call any parent class Tick implementation
 	Super::Tick(DeltaSeconds);
+}
+
+void ASW_Project2Pawn::SetEnergy(float DeltaSeconds)
+{
+	if (bThrust && energy != 0.0f)
+		energy -= 0.5f * DeltaSeconds;
+	if (energy <= 1.0f)
+		energy += 0.1f * DeltaSeconds;
+	
 }
 
 void ASW_Project2Pawn::NotifyHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
@@ -122,27 +128,40 @@ void ASW_Project2Pawn::NotifyHit(class UPrimitiveComponent* MyComp, class AActor
 
 	if (Other == block)
 	{
-		if (block->Pickup)
-		{
-			AGameMode* gModePtr = GetWorld()->GetAuthGameMode();
-			ASW_Project2GameMode* GameModePtr = Cast<ASW_Project2GameMode>(gModePtr);
-			GameModePtr->time += 10.0f;
-			Other->Destroy();
-		}
+		if (!block->Pickup)
+			HurtfulCollision(Other);
 		else
-		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("TakeDamage"));
-			health -= 0.2f;
-			Other->Destroy();
-			CurrentForwardSpeed = 0.f;
-		}
-
+			PickupCollision(Other);
+		
 		if (block->Finish)
-		{
-			bFinish = true;
-		}
+			FinishedGame();
+		
 	}
-	// Set velocity to zero upon collision
+}
+
+void ASW_Project2Pawn::PickupCollision(AActor* Other)
+{
+	AGameMode* gModePtr = GetWorld()->GetAuthGameMode();
+	ASW_Project2GameMode* GameModePtr = Cast<ASW_Project2GameMode>(gModePtr);
+	GameModePtr->time += 10.0f;
+	Other->Destroy();
+}
+
+void ASW_Project2Pawn::HurtfulCollision(AActor* Other)
+{
+	AGameMode* gModePtr = GetWorld()->GetAuthGameMode();
+	ASW_Project2GameMode* GameModePtr = Cast<ASW_Project2GameMode>(gModePtr);
+	GameModePtr->health -= 0.2f;
+	health -= 0.2f;
+	Other->Destroy();
+	CurrentForwardSpeed = 0.f;
+}
+
+void ASW_Project2Pawn::FinishedGame()
+{
+	UObject* worldGameMode = GetWorld()->GetAuthGameMode();
+	ASW_Project2GameMode* gameMode = Cast<ASW_Project2GameMode>(worldGameMode);
+	gameMode->bGameFinish = true;
 }
 
 
@@ -159,31 +178,39 @@ void ASW_Project2Pawn::SetupPlayerInputComponent(class UInputComponent* InputCom
 
 void ASW_Project2Pawn::ThrustInput(float Val)
 {
-	// Is there no input?
-	bool bHasInput = !FMath::IsNearlyEqual(Val, 0.f);
 	if (energy >= 0.0f)
-	{
-		// If input is not held down, reduce speed
-		float CurrentAcc = bHasInput ? (Val * Acceleration) : (-0.5f * Acceleration);
-		// Calculate new speed
-		float NewForwardSpeed = CurrentForwardSpeed + (GetWorld()->GetDeltaSeconds() * CurrentAcc);
-		// Clamp between MinSpeed and MaxSpeed
-		CurrentForwardSpeed = FMath::Clamp(NewForwardSpeed, MinSpeed, MaxSpeed);
-
-		if (bHasInput)		
-			bThrust = true;		
-		else
-			bThrust = false;
-	}
+		ThrustAccelerate(Val);
 	else
-	{
-		bHasInput = false;
-		bThrust = false;
-		float CurrentAcc = bHasInput ? (Val * Acceleration) : (-0.5f * Acceleration);
-		float NewForwardSpeed = CurrentForwardSpeed + (GetWorld()->GetDeltaSeconds() * CurrentAcc);
-		CurrentForwardSpeed = FMath::Clamp(NewForwardSpeed, MinSpeed, MaxSpeed);
-	}
+		ThurstDeaccelerate(Val);
+}
 
+void ASW_Project2Pawn::ThurstDeaccelerate(float Val)
+{
+	bool bHasInput = !FMath::IsNearlyEqual(Val, 0.f);
+	bHasInput = false;
+	bThrust = false;
+	// If input is not held down, reduce speed
+	float CurrentAcc = bHasInput ? (Val * Acceleration) : (-0.5f * Acceleration);
+	// Calculate new speed
+	float NewForwardSpeed = CurrentForwardSpeed + (GetWorld()->GetDeltaSeconds() * CurrentAcc);
+	// Clamp between MinSpeed and MaxSpeed
+	CurrentForwardSpeed = FMath::Clamp(NewForwardSpeed, MinSpeed, MaxSpeed);
+}
+
+void ASW_Project2Pawn::ThrustAccelerate(float Val)
+{
+	bool bHasInput = !FMath::IsNearlyEqual(Val, 0.f);
+	// If input is not held down, reduce speed
+	float CurrentAcc = bHasInput ? (Val * Acceleration) : (-0.5f * Acceleration);
+	// Calculate new speed
+	float NewForwardSpeed = CurrentForwardSpeed + (GetWorld()->GetDeltaSeconds() * CurrentAcc);
+	// Clamp between MinSpeed and MaxSpeed
+	CurrentForwardSpeed = FMath::Clamp(NewForwardSpeed, MinSpeed, MaxSpeed);
+	//Set bool
+	if (bHasInput)
+		bThrust = true;
+	else
+		bThrust = false;
 }
 
 void ASW_Project2Pawn::MoveUpInput(float Val)
@@ -204,8 +231,6 @@ void ASW_Project2Pawn::MoveRightInput(float Val)
 	// Smoothly interpolate to target yaw speed
 	CurrentYawSpeed = FMath::FInterpTo(CurrentYawSpeed, TargetYawSpeed, GetWorld()->GetDeltaSeconds(), 2.f);
 
-
-
 	// Is there any left/right input?
 	const bool bIsTurning = FMath::Abs(Val) > 0.2f;
 
@@ -219,47 +244,19 @@ void ASW_Project2Pawn::MoveRightInput(float Val)
 
 void ASW_Project2Pawn::ShootProjectile()
 {
-	
-	/*const FRotator SpawnRotation = SpringArm->GetComponentRotation(); 
-	
-	const FVector SpawnLocation = GetActorLocation() + FVector(200.f, 0.f, 0.f);
-	const FRotator CurrentRotation = GetActorRotation();
-
-	//FVector SocketPos = PointLight->GetComponentLocation();
-	//FRotator SocketRotation = PointLight->GetComponentRotation();
-	//const FVector MuzzleLocation = 
-
-	//const FVector SpawnLocation = GetActorLocation() + FVector(200.f - Offset.X, 0.f - Offset.Y, 0.f - Offset.Z);
-	//const FVector SpawnLocation = SocketPos + FVector(200.f, 0, 0);
-	
-	FVector const MuzzleLocation = SpawnLocation + FTransform(CurrentRotation).TransformVector(MuzzleOffset);
-	FRotator MuzzleRotation = CurrentRotation;*/
-
-
 	FVector CameraLoc = GetActorLocation();
 	FRotator CameraRot = GetActorRotation();
 	FVector const MuzzleLocation = CameraLoc + FTransform(CameraRot).TransformVector(MuzzleOffset);
 	FRotator MuzzleRotation = CameraRot;
 
-
-
 	UWorld* const World = GetWorld();
-	if (World)
+	if (World && energy >= 0.25f)
 	{
 		FActorSpawnParameters SpawnParams;
 		SpawnParams.Owner = this;
 		SpawnParams.Instigator = Instigator;
-
 		AProjectile* Projectile = World->SpawnActor<AProjectile>(Projectile_BP, MuzzleLocation, MuzzleRotation, SpawnParams);
+		energy -= 0.25f;
 	}
-
-	/*UWorld* const World = GetWorld();
-	if (World != NULL)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Shoot"));
-		FActorSpawnParameters SpawnParams;
-		SpawnParams.Instigator = this;
-		AProjectile* Projectile = World->SpawnActor<AProjectile>(Projectile_BP, MuzzleLocation, MuzzleRotation, SpawnParams);
-	}*/
 }
 

@@ -12,8 +12,10 @@ ASW_Project2GameMode::ASW_Project2GameMode()
 	DefaultPawnClass = ASW_Project2Pawn::StaticClass();
 	time = 30.f;
 	health = 1.0f;
+	bGameFinish = false;
+	bMapPause = false;
 }
-
+  
 void ASW_Project2GameMode::BeginPlay()
 {
 	Super::BeginPlay();
@@ -33,21 +35,21 @@ void ASW_Project2GameMode::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 
-	time -= DeltaSeconds;
+	if (time <= 0.0f || health <= 0.0f)
+		DisplayRestartMenu();
+	else
+		time -= DeltaSeconds;
 
+	if (bGameFinish)
+		MoveToMenuMap();
+}
 
-	//Hanlde player input, fixxa
-	APawn* pawn = GetWorld()->GetFirstPlayerController()->GetPawn();
-		//this->DefaultPawnClass
-	ASW_Project2Pawn* thePawn = Cast<ASW_Project2Pawn>(pawn);
+void ASW_Project2GameMode::MoveToMenuMap()
+{
+	UGameplayStatics::OpenLevel(this, TEXT("/Game/TransitionMap"), true);
+}
 
-	if (thePawn->bFinish)
-	{
-	
-		UGameplayStatics::OpenLevel(this, TEXT("/Game/TransitionMap"), true);
-	//	UGameplayStatics::OpenLevel((this, FName(TEXT("NewMap1"),false ));
-
-
-	}
-
+void ASW_Project2GameMode::DisplayRestartMenu()
+{
+	bMapPause = true;
 }

@@ -67,6 +67,13 @@ protected:
 	void ShootProjectile();
 
 private:
+
+	void SetEnergy(float DeltaSeconds);
+	void FinishedGame();
+	void HurtfulCollision(AActor* other);
+	void PickupCollision(AActor* other);
+	void ThrustAccelerate(float Val);
+	void ThurstDeaccelerate(float Val);
 	/** How quickly forward speed changes */
 	UPROPERTY(Category=Plane, EditAnywhere)
 	float Acceleration;

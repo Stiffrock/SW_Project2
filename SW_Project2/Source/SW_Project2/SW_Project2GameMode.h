@@ -16,10 +16,19 @@ public:
 	float time;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
-		float health;
+	float health;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Map")
+	bool bMapPause;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Map")
+	bool bGameFinish;
+
+
+	void MoveToMenuMap();
+	void DisplayRestartMenu();
 
 	/*TSubclassOf<class UUserWidget> HUDWidgetClass;
-
 	UPROPERTY()
 	class UUserWidget* CurrentWidget;*/
 

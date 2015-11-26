@@ -8,6 +8,9 @@
 #ifndef SW_PROJECT2_Block_generated_h
 	#include "Block.h"
 #endif
+#ifndef SW_PROJECT2_CameraDirector_generated_h
+	#include "CameraDirector.h"
+#endif
 #ifndef SW_PROJECT2_MyHUD_generated_h
 	#include "MyHUD.h"
 #endif

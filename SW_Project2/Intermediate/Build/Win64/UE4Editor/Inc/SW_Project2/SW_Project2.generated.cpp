@@ -13,6 +13,10 @@ void EmptyLinkFunctionForGeneratedCodeSW_Project2() {}
 	{
 	}
 	IMPLEMENT_CLASS(ABlock, 371022138);
+	void ACameraDirector::StaticRegisterNativesACameraDirector()
+	{
+	}
+	IMPLEMENT_CLASS(ACameraDirector, 429659323);
 	void AMyHUD::StaticRegisterNativesAMyHUD()
 	{
 	}
@@ -29,7 +33,7 @@ void EmptyLinkFunctionForGeneratedCodeSW_Project2() {}
 	void ASW_Project2GameMode::StaticRegisterNativesASW_Project2GameMode()
 	{
 	}
-	IMPLEMENT_CLASS(ASW_Project2GameMode, 3041963933);
+	IMPLEMENT_CLASS(ASW_Project2GameMode, 987108238);
 	void ASW_Project2Pawn::StaticRegisterNativesASW_Project2Pawn()
 	{
 	}
@@ -39,11 +43,11 @@ void EmptyLinkFunctionForGeneratedCodeSW_Project2() {}
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 	ENGINE_API class UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AHUD();
 	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API class UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
-	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
@@ -52,6 +56,8 @@ void EmptyLinkFunctionForGeneratedCodeSW_Project2() {}
 
 	SW_PROJECT2_API class UClass* Z_Construct_UClass_ABlock_NoRegister();
 	SW_PROJECT2_API class UClass* Z_Construct_UClass_ABlock();
+	SW_PROJECT2_API class UClass* Z_Construct_UClass_ACameraDirector_NoRegister();
+	SW_PROJECT2_API class UClass* Z_Construct_UClass_ACameraDirector();
 	SW_PROJECT2_API class UClass* Z_Construct_UClass_AMyHUD_NoRegister();
 	SW_PROJECT2_API class UClass* Z_Construct_UClass_AMyHUD();
 	SW_PROJECT2_API class UClass* Z_Construct_UClass_APickup_NoRegister();
@@ -113,6 +119,48 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ABlock(Z_Construct_UClass_ABlock, TEXT("ABlock"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABlock);
+	UClass* Z_Construct_UClass_ACameraDirector_NoRegister()
+	{
+		return ACameraDirector::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ACameraDirector()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_SW_Project2();
+			OuterClass = ACameraDirector::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_CameraThree = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraThree"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CameraThree, ACameraDirector), 0x0000000000000001, Z_Construct_UClass_AActor_NoRegister());
+				UProperty* NewProp_CameraTwo = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraTwo"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CameraTwo, ACameraDirector), 0x0000000000000001, Z_Construct_UClass_AActor_NoRegister());
+				UProperty* NewProp_CameraOne = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraOne"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CameraOne, ACameraDirector), 0x0000000000000001, Z_Construct_UClass_AActor_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("CameraDirector.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("CameraDirector.h"));
+				MetaData->SetValue(NewProp_CameraThree, TEXT("Category"), TEXT("CameraDirector"));
+				MetaData->SetValue(NewProp_CameraThree, TEXT("ModuleRelativePath"), TEXT("CameraDirector.h"));
+				MetaData->SetValue(NewProp_CameraTwo, TEXT("Category"), TEXT("CameraDirector"));
+				MetaData->SetValue(NewProp_CameraTwo, TEXT("ModuleRelativePath"), TEXT("CameraDirector.h"));
+				MetaData->SetValue(NewProp_CameraOne, TEXT("Category"), TEXT("CameraDirector"));
+				MetaData->SetValue(NewProp_CameraOne, TEXT("ModuleRelativePath"), TEXT("CameraDirector.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ACameraDirector(Z_Construct_UClass_ACameraDirector, TEXT("ACameraDirector"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ACameraDirector);
 	UClass* Z_Construct_UClass_AMyHUD_NoRegister()
 	{
 		return AMyHUD::StaticClass();
@@ -283,6 +331,10 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				CPP_BOOL_PROPERTY_BITMASK_STRUCT(bGameFinish, ASW_Project2GameMode, bool);
+				UProperty* NewProp_bGameFinish = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("bGameFinish"), RF_Public|RF_Transient|RF_Native) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bGameFinish, ASW_Project2GameMode), 0x0000000000000005, CPP_BOOL_PROPERTY_BITMASK(bGameFinish, ASW_Project2GameMode), sizeof(bool), true);
+				CPP_BOOL_PROPERTY_BITMASK_STRUCT(bMapPause, ASW_Project2GameMode, bool);
+				UProperty* NewProp_bMapPause = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("bMapPause"), RF_Public|RF_Transient|RF_Native) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bMapPause, ASW_Project2GameMode), 0x0000000000000005, CPP_BOOL_PROPERTY_BITMASK(bMapPause, ASW_Project2GameMode), sizeof(bool), true);
 				UProperty* NewProp_health = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("health"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(health, ASW_Project2GameMode), 0x0000000000000005);
 				UProperty* NewProp_time = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("time"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(time, ASW_Project2GameMode), 0x0000000000000005);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
@@ -294,6 +346,10 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("SW_Project2GameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("SW_Project2GameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+				MetaData->SetValue(NewProp_bGameFinish, TEXT("Category"), TEXT("Map"));
+				MetaData->SetValue(NewProp_bGameFinish, TEXT("ModuleRelativePath"), TEXT("SW_Project2GameMode.h"));
+				MetaData->SetValue(NewProp_bMapPause, TEXT("Category"), TEXT("Map"));
+				MetaData->SetValue(NewProp_bMapPause, TEXT("ModuleRelativePath"), TEXT("SW_Project2GameMode.h"));
 				MetaData->SetValue(NewProp_health, TEXT("Category"), TEXT("Player"));
 				MetaData->SetValue(NewProp_health, TEXT("ModuleRelativePath"), TEXT("SW_Project2GameMode.h"));
 				MetaData->SetValue(NewProp_time, TEXT("Category"), TEXT("Time"));
@@ -391,8 +447,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SW_Project2")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xE7FC5C85;
-			Guid.B = 0x5D8244EA;
+			Guid.A = 0x93107358;
+			Guid.B = 0x0274A157;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
