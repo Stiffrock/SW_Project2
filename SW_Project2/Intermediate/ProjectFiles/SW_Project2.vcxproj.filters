@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\SW_Project2.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{78E6AEA2-3B18-4932-8B58-98DC4D1163C6}</UniqueIdentifier>
+			<UniqueIdentifier>{9120D570-7764-442C-A2C5-D306191E405E}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\SW_Project2.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{A2781E6D-56A0-4E3B-B5EA-73EC71EA3E9D}</UniqueIdentifier>
+			<UniqueIdentifier>{860824D2-92D2-49DE-B573-0E2471FE86EE}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -31,7 +31,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\SW_Project2">
-			<UniqueIdentifier>{EDAABC85-1CE6-44AA-B9BA-7A780CFCC984}</UniqueIdentifier>
+			<UniqueIdentifier>{15C85294-677A-4E5A-9B88-5AE981917CDB}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\SW_Project2\Block.cpp">
 			<Filter>Source\SW_Project2</Filter>
